@@ -1,0 +1,26 @@
+<main class="main">
+  <div class="tag-inner">
+    <div class='tag-name'>
+       <%= @tag.name %>
+    </div>   
+      <div class="tag-contents">
+        <% @recipes.each do |recipe| %>
+          <div class="tag-content">
+            <div class="card__body">
+              <div class='tag-image'>
+                <%= image_tag recipe.main_image  %>
+              </div>
+            </div>
+            <p class="card__summary">
+              <%= link_to recipe.title, recipe_path(recipe.id), method: :get, class: :card__title%>
+            </p>
+          </div> 
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+ 
+ 
+
+ 
