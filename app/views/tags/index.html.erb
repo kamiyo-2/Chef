@@ -1,0 +1,153 @@
+<main class="main">
+  <div class="tag-inner">
+       <% if user_signed_in? %>
+      <div class="greeting">
+         こんにちは、
+        <%= link_to "#{current_user.name}さん", "/users/#{current_user.id}",  class: :greeting__link %>
+       </div>
+      <% end %>
+
+
+    
+    <div class="tag-contents">
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/1">
+                <%= image_tag "french.1.jpg" %>
+                 <%# <%= link_to image_tag ("french.1.jpg",class:"card__img"), "/tags/1" %> 
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/1">
+                 <%= @tags.name %>
+              </a>
+            </p>
+           </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/2">
+                <%= image_tag "french.2.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/2">
+                <%= @tagss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+      
+      
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/3">
+                <%= image_tag "french.3.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/3">
+                <%= @tagsss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/4">
+                <%= image_tag "japan.1.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/4">
+                <%= @tagssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/5">
+                <%= image_tag "japan.2.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/5">
+                <%= @tagsssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/6">
+                <%= image_tag "japan.3.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/6">
+                <%= @tagssssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/7">
+                <%= image_tag "chinese.1.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/7">
+                <%= @tagsssssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/8">
+                <%= image_tag "chinese.2.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/8">
+                <%= @tagssssssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+
+      <div class="tag-content">
+        <div class="card__body">
+            <div class='tag-image'>
+              <a href="/tags/9">
+                <%= image_tag "chinese.3.jpg" %>
+              </a>
+            </div>
+            <p class="card__summary">
+              <a href="/tags/9">
+                <%= @tagsssssssss.name %>
+              </a>
+            </p>
+        </div> 
+      </div>
+    </div>
+  </div>
+</main>
+ 
+ 
