@@ -17,7 +17,7 @@ class RecipephotosController < ApplicationController
     else
       @recipe = @recipephoto.recipe
       @recipephotos = @recipe.recipephotos
-      render "recipes/show"
+      render root_path
     end
   end
 

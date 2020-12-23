@@ -11,7 +11,7 @@ class FoodstuffsController < ApplicationController
     @foodstuff = Foodstuff.new(foodstuff_params)
   
     if @foodstuff.save
-    redirect_to new_recipe_text_path( @foodstuff.recipe_id)
+    redirect_to new_recipe_recipephoto_path( @foodstuff.recipe_id)
     else
       @recipe = @foodstuff.recipe
       @foodstuffs = @recipe.foodstuffs

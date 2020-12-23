@@ -1,5 +1,5 @@
 class Recipephoto < ApplicationRecord
-  attachment :sub_image
+  has_one_attached :sub_image
   belongs_to :recipe
 
   validates :text,        presence: true
