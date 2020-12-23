@@ -16,6 +16,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    @recipephoto = Recipephoto.new
+    @recipephotos = @recipe.recipephotos
+    @foodstuff = Foodstuff.new
+    @foodstuffs = @recipe.foodstuffs
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: []).merge(user_id: current_user.id)

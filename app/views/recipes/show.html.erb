@@ -1,0 +1,126 @@
+<div class="form-wrapper">
+  <div class="tag-inner">
+
+    <div class="">
+      <h2 class="page-heading">新規レシピ投稿</h2>       
+  <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
+ <div class="field">
+   <%= f.label :process, "作り方" %><br />
+ <p class="detail__message">
+            <%= @recipe.process %>
+          </p>
+  </div>  
+
+  
+  <div class="main-contents">
+    <div class="image-content">
+      <%= image_tag @recipe.main_image %>
+   </div>
+   <div class="from-content">
+<div class="title-content">
+       <div class="title-name">
+         <p> レシピ</p>
+       </div>
+     <div class="valu-name">
+       <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集", edit_recipe_path(@recipe.id), method: :get, class: :prototype__btn %>
+        </div>
+      <% end %>
+       </div>
+    </div>
+ 
+     <div class="title-content">
+       <div class="title-name">
+         <p> 料理名 </p>
+       </div>
+     <div class="valu-name">
+        <p><%= @recipe.title %></p>
+       </div>
+    </div>
+    <div class="details-content">
+    
+    <div class="title-name">
+         <p> 分量(何人前) </p>
+          </div>   
+        <div class="valu-name">
+      <p> <%= @recipe.details %></p>
+      </div>
+    </div>    
+<% end %>
+<div class="title-content">
+       <div class="title-name">
+         <p> 材料</p>
+       </div>
+     <div class="valu-name">
+       <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集",   edit_recipe_foodstuff_path(@recipe.id), method: :get, class: :prototype__btn %>
+        </div>
+      <% end %>
+       </div>
+    </div>
+     <div class="title-content">
+       <% @foodstuffs.each do |foodstuff| %>
+         <div class="title-name">
+           <p><%= foodstuff.material %></p> 
+         </div>
+         <div class="valu-name">
+           <%= foodstuff.quantity %>
+         </div>
+        <% end %>
+        
+     </div>
+</div>
+
+
+</div>
+
+
+ <div class="tag-contents">
+
+        <div class="prototype__comments">
+
+        
+          <ul class="comments_lists">
+            <% if @text %>
+
+
+            <div class="title-content">
+       <div class="title-name">
+         <p>作り方</p>
+       </div>
+     <div class="valu-name">
+       <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集",  edit_recipe_text_path(@recipe.id), method: :get, class: :prototype__btn %>
+        </div>
+      <% end %>
+       </div>
+    </div>
+           <% @texts.each do |text| %>
+              
+              
+
+              <div class="tag-content">
+       <%= attachment_image_tag text, :text_image %>
+          <p><%= text.text %></p>
+   </div>
+      
+
+      
+       
+              <% end %>
+             <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+</main>
+
+</div>
+
+
+
+ 
+     
