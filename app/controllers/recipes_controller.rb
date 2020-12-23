@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.texts
+    @recipephotos = @recipe.recipephotos
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
   end
