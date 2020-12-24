@@ -1,5 +1,5 @@
-<div class="form-wrapper">
-  <div class="tag-inner">
+<div class="form_wrapper">
+  <div class="for_inner">
     <div>
       <h2 class="page-heading">新規レシピ投稿</h2>       
         <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
@@ -34,23 +34,37 @@
         <% end %>
 
         <%= form_with(model: [@recipe, @foodstuff], local: true) do |f| %>
-    
           <div class="material-content">
             <div class="field">
               <%= f.label :material, "材料" %><br />
-              <%= f.text_field :material %>
+              <%= f.text_field :material , id: "material"%>
             </div>
             <div class="field">
               <%= f.label :quantity, "分量" %><br />
-              <%= f.text_field :quantity %>
+              <%= f.text_field :quantity , id: "quantity"%>
             </div>
-
             </div>
               <div class="actions">
-                <%= f.submit "保存する", class: :form__btn  %>
+                <%= f.submit "保存する", id: "submit"  %>
               </div>
           </div>
         <% end %>
+
+ <div class="title-content">
+       <% @foodstuffs.each do |foodstuff| %>
+         <div class="title-name">
+           <p><%= foodstuff.material %></p> 
+         </div>
+         <div class="valu-name">
+           <%= foodstuff.quantity %>
+         </div>
+        <% end %>
+        
+     </div>
+
+
+        <div id="list">
+</div>
      
     </div>
   </div>
@@ -62,3 +76,4 @@
 
 
 
+<%= link_to "編集", new_recipe_recipephoto_path( @recipe[:id]) %>

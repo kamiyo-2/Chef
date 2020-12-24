@@ -1,3 +1,36 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// recipes.index
+
+.form_wrapper {
+padding: 70px 100px;
+}
+
+.main_contents {
+  display: flex;
+}
+
+.image-content {
+  width: 45%;
+  margin: 15px 2.5%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F96167;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fffefc;
+  margin: 15px;
+  float: left;
+  box-shadow: 3px 3px 3px 3px #faebd7;
+}
+
+.text-content {
+  width: 50%;
+}
+
+.image-content img  {
+  height: 400px;
+}
