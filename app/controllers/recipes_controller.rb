@@ -16,13 +16,15 @@ class RecipesController < ApplicationController
     end
   end
 
+
   def show
     @recipe = Recipe.find(params[:id])
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos
+    @recipephots = @recipe.recipephotos
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
   end
+
 
   private
   def recipe_params
