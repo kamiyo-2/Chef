@@ -1,4 +1,4 @@
-<main class="main">
+<main class="main_form">
   <div class="tag-inner">
     <div class='tag-name'>
        <%= @tag.name %>
@@ -7,7 +7,7 @@
         <% @recipes.each do |recipe| %>
           <div class="tag-content">
             <div class="card__body">
-              <div class='tag-image'>
+              <div class='tag-images'>
                 <%= image_tag recipe.main_image  %>
               </div>
             </div>
