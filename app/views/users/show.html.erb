@@ -1,0 +1,40 @@
+<div class="main_form">
+  <div class="main">
+    <div class="inner">
+      <div class="user_wapper">
+        <div class="user_image">
+          <% if @user.user_image.attached? %>
+            <%= image_tag post.user.user_image , class: "user_image_index"%> 
+          <% else %>
+            <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
+          <% end%>
+          <p class="user_edit_button">
+          <button class="btn btn-secondary btn-lg edit" >
+            <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
+          </button>
+          </p>
+        </div>
+        <div class="user_form">
+          <table class="table">
+            <tr>
+              <td class="align-middle">名前</td>
+              <td class="align-middles"><%=  @user.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">自己紹介</td>
+              <td class="align-middles-profile"><%= @user.profile %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">部署</td>
+              <td class="align-middles"><%= @user.department  %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">メールアドレス</td>
+              <td class="align-middles"><%= @user.email  %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
