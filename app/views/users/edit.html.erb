@@ -1,0 +1,43 @@
+<div class="main_form">
+  <div class="main">
+    <div class="inner">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <div class="user_wapper">
+        <div class="user_image">
+          <% if @user.user_image.attached? %>
+            <%= image_tag post.user.user_image , class: "user_image_index"%> 
+          <% else %>
+            <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
+          <% end%>
+          <p class="user_image_fild">
+         <%= f.file_field :user_image %> 
+          </p>
+        </div>
+        <div class="user_form">
+          <table class="table">
+            <tr>
+              <td class="align-middle">名前</td>
+              <td class="align-middles"> <%= f.text_field :name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">自己紹介</td>
+              <td class="align-middles-profile"> <%= f.text_field :profile %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">部署</td>
+              <td class="align-middles"> <%= f.text_field :department %></td>
+            </tr>
+            <tr>
+              <td class="align-middle">メールアドレス</td>
+              <td class="align-middles"> <%= f.text_field :email %></td>
+            </tr>
+          </table>
+          <%= f.submit "Update", class: 'btn'%>
+           <button class="btn_delete" >Delete</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

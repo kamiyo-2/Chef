@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.valid?
+    binding.pry
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "ユーザー情報を更新しました。"
     else
@@ -26,5 +27,8 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
-  
+  private
+  def user_params
+    params.require(:user).permit(:name, :user_image, :profile, :department,:email)
+  end
 end
