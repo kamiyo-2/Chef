@@ -11,6 +11,6 @@ class User < ApplicationRecord
            validates :profile
            validates :department
          end
-
+         has_one_attached :user_image
   has_many :recipes
 end
