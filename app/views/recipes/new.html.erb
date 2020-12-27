@@ -37,6 +37,27 @@
           </div>
         </div>
       </div>
+
+
+
+
+      <div class="materials_field">
+      <%= f.fields_for :foodstuffs, @recipe.foodstuffs do |foodstuff| %>
+        <%# <div class="material_field" id="material_field[0]"> %>
+        <%= foodstuff.text_field :material , placeholder: "食材" %>
+        <%= foodstuff.text_field :quantity, placeholder: "量" %> 
+        </div>
+    
+      <% end %>
+    </div>
+    <div class="steps_field">
+     
+    </div>
+    <div class="btn-send">
+
+    </div> 
+
+
       
       <div class="actions">
         <%= f.submit "保存する", class: :form__btn  %>

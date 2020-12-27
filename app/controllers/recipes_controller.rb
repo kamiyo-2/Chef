@@ -2,6 +2,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe.foodstuffs.build
+
   end
 
   def create
@@ -9,8 +11,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.valid?
     if @recipe.save
-      @recipe[:id]
-      redirect_to new_recipe_foodstuff_path(@recipe.id)
+binding.pry
+      redirect_to root_path
     else
       render :new
     end
@@ -28,7 +30,8 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: []).merge(user_id: current_user.id)
+    
+    params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: [], foodstuffs_attributes: [:material, :quantity]).merge(user_id: current_user.id)
   end
 
 end
