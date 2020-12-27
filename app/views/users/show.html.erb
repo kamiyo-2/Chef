@@ -4,7 +4,7 @@
       <div class="user_wapper">
         <div class="user_image">
           <% if @user.user_image.attached? %>
-            <%= image_tag post.user.user_image , class: "user_image_index"%> 
+            <%= image_tag @user.user_image , class: "user_image_index"%> 
           <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
           <% end%>

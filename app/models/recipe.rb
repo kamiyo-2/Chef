@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :foodstuffs
-  has_many :recipephotos
+  has_many :foodstuffs, dependent: :destroy
+  has_many :recipephotos, dependent: :destroy
 
   has_one_attached :main_image
 

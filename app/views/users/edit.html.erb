@@ -5,7 +5,7 @@
       <div class="user_wapper">
         <div class="user_image">
           <% if @user.user_image.attached? %>
-            <%= image_tag post.user.user_image , class: "user_image_index"%> 
+            <%= image_tag @user.user_image , class: "user_image_index"%> 
           <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
           <% end%>
@@ -32,8 +32,12 @@
               <td class="align-middles"> <%= f.text_field :email %></td>
             </tr>
           </table>
-          <%= f.submit "Update", class: 'btn'%>
-           <button class="btn_delete" >Delete</button>
+          <div class="button_form">
+          <%= f.submit "Update", class: 'button'%>
+            <%=link_to user_path(current_user.id), method: :delete  do %>
+            <button class="btn_delete" >Delete</button>
+            </div>
+          <%end%>
           <% end %>
         </div>
       </div>

@@ -68,3 +68,22 @@ td.align-middles-profile > input#user_profile{
   padding: 25px 0 0 0;
     width: 25vw;
 }
+
+.user_form input.button {
+background-color: orange;
+border: none;
+padding: 10px;
+margin: 10px 0 0 228px;
+}
+
+button.btn_delete {
+background-color: red;
+border: none;
+padding: 15px;
+margin: 10px 0 0 40px;
+font-size: 17px;
+}
+
+.button_form {
+  display: flex;
+}
