@@ -55,3 +55,35 @@ button.btn.btn-secondary.btn-lg.edit {
   padding: 6% 0 0 25%;
   height: 65px;
 }
+
+
+
+
+
+td.align-middles-profile > input#user_profile{
+  height: 60px;
+}
+
+.user_image_fild {
+  padding: 25px 0 0 0;
+    width: 25vw;
+}
+
+.user_form input.button {
+background-color: orange;
+border: none;
+padding: 10px;
+margin: 10px 0 0 228px;
+}
+
+button.btn_delete {
+background-color: red;
+border: none;
+padding: 15px;
+margin: 10px 0 0 40px;
+font-size: 17px;
+}
+
+.button_form {
+  display: flex;
+}

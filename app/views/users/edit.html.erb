@@ -1,6 +1,7 @@
 <div class="main_form">
   <div class="main">
     <div class="inner">
+    <%= form_with(model: @user, local: true) do |f| %>
       <div class="user_wapper">
         <div class="user_image">
           <% if @user.user_image.attached? %>
@@ -8,33 +9,39 @@
           <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
           <% end%>
-          <p class="user_edit_button">
-          <button class="btn btn-secondary btn-lg edit" >
-            <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
-          </button>
+          <p class="user_image_fild">
+         <%= f.file_field :user_image %> 
           </p>
         </div>
         <div class="user_form">
           <table class="table">
             <tr>
               <td class="align-middle">名前</td>
-              <td class="align-middles"><%=  @user.name %></td>
+              <td class="align-middles"> <%= f.text_field :name %></td>
             </tr>
             <tr>
               <td class="align-middle">自己紹介</td>
-              <td class="align-middles-profile"><%= @user.profile %></td>
+              <td class="align-middles-profile"> <%= f.text_field :profile %></td>
             </tr>
             <tr>
               <td class="align-middle">部署</td>
-              <td class="align-middles"><%= @user.department  %></td>
+              <td class="align-middles"> <%= f.text_field :department %></td>
             </tr>
             <tr>
               <td class="align-middle">メールアドレス</td>
-              <td class="align-middles"><%= @user.email  %></td>
+              <td class="align-middles"> <%= f.text_field :email %></td>
             </tr>
           </table>
+          <div class="button_form">
+          <%= f.submit "Update", class: 'button'%>
+            <%=link_to user_path(current_user.id), method: :delete  do %>
+            <button class="btn_delete" >Delete</button>
+            </div>
+          <%end%>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
