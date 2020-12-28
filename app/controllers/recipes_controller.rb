@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.valid?
     if @recipe.save
-binding.pry
+
       redirect_to root_path
     else
       render :new
