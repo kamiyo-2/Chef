@@ -13,7 +13,7 @@ class FoodstuffsController < ApplicationController
   
     if @foodstuff.save
    
-      redirect_to new_recipe_recipephoto_path( @foodstuff.recipe_id)
+      redirect_to recipe_path(@foodstuff.recipe_id), method: :get
     else
       @recipe = @foodstuff.recipe
       @foodstuffs = @recipe.foodstuffs

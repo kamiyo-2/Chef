@@ -1,0 +1,27 @@
+<div class="nested-fields">
+  <table>
+    <tr>
+      <td class="td-fixed-amount">
+        <%= f.text_field :material , placeholder: "食材"%>
+        <%= f.text_field :quantity, placeholder: "量" %> 
+      </td>
+      <td class="td-fixed-delete">
+        <!-- 削除ボタン -->
+        <%= link_to_remove_association "削除", f %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+<%# <%= f.fields_for : @recipe.foodstuffs do |t| %> 
+    <%# <%= render "recipes/foodstuff_fields", f: t %> 
+  <%# <% end %> 
+
+  <!-- 食材追加ボタン -->
+  <%# <%= link_to_add_association "追加", f,:foodstuffs %> 
+<%# </div> %>
+
