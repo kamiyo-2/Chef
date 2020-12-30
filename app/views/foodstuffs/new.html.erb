@@ -1,79 +1,54 @@
 <div class="form_wrapper">
   <div class="for_inner">
     <div>
-      <h2 class="page-heading">新規レシピ投稿</h2>       
-        <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
+      <h2 class="page-heading">新規レシピ投稿</h2>
+      <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
+        <div class="field">
+          <%= f.label :process, "作り方" %><br />
+            <p class="detail__message">
+              <%= @recipe.process %>
+           </p>
+        </div>
+        <div class="main-contents">
+          <div class="image-content">
+            <%= image_tag @recipe.main_image %>
+          </div>
+          <div class="from-content">
+            <div class="title-content">
+              <div class="title-name">
+                <p> 料理名 </p>
+              </div>
+              <div class="valu-name">
+                <p><%= @recipe.title %></p>
+              </div>
+            </div>
+            <div class="details-content">
+              <div class="title-name">
+                <p> 分量(何人前) </p>
+              </div>   
+              <div class="valu-name">
+                 <p> <%= @recipe.details %></p>
+              </div>
+            </div>  
+          </div>
+        </div>  
+      <% end %>
+      <%= form_with(model: [@recipe, @foodstuff], local: true) do |f| %>
+        <div class="material-content">
           <div class="field">
-            <%= f.label :process, "作り方" %><br />
-              <p class="detail__message">
-                <%= @recipe.process %>
-             </p>
+            <%= f.label :material, "材料" %><br />
+            <%= f.text_field :material , id: "material"%>
           </div>
-
-          <div class="main-contents">
-            <div class="image-content">
-              <%= image_tag @recipe.main_image %>
-            </div>
-            <div class="from-content">
-              <div class="title-content">
-                <div class="title-name">
-                  <p> 料理名 </p>
-                </div>
-                  <div class="valu-name">
-                    <p><%= @recipe.title %></p>
-                 </div>
-              </div>
-                <div class="details-content">
-                  <div class="title-name">
-                    <p> 分量(何人前) </p>
-                 </div>   
-                   <div class="valu-name">
-                     <p> <%= @recipe.details %></p>
-                  </div>
-                </div>    
-        <% end %>
-
-        <%= form_with(model: [@recipe, @foodstuff], local: true) do |f| %>
-          <div class="material-content">
-            <div class="field">
-              <%= f.label :material, "材料" %><br />
-              <%= f.text_field :material , id: "material"%>
-            </div>
-            <div class="field">
-              <%= f.label :quantity, "分量" %><br />
-              <%= f.text_field :quantity , id: "quantity"%>
-            </div>
-            </div>
-              <div class="actions">
-                <%= f.submit "保存する", id: "submit"  %>
-              </div>
+          <div class="field">
+            <%= f.label :quantity, "分量" %><br />
+            <%= f.text_field :quantity , id: "quantity"%>
           </div>
-        <% end %>
-
- <div class="title-content">
-       <% @foodstuffs.each do |foodstuff| %>
-         <div class="title-name">
-           <p><%= foodstuff.material %></p> 
-         </div>
-         <div class="valu-name">
-           <%= foodstuff.quantity %>
-         </div>
-        <% end %>
-        
-     </div>
-
-
-        <div id="list">
-</div>
-     
+        </div>
+        <div class="actions">
+          <%= f.submit "保存する", id: "submit"  %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-</div>
-      
 
-
-
-
-
-<%= link_to "編集", new_recipe_recipephoto_path( @recipe[:id]) %>

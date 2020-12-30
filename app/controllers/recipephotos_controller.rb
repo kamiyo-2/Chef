@@ -12,7 +12,7 @@ class RecipephotosController < ApplicationController
   def create
     @recipephoto = Recipephoto.new(recipephoto_params)
     if @recipephoto.save
-      
+
       redirect_to recipe_path(@recipephoto.recipe_id), method: :get
     else
       @recipe = @recipephoto.recipe
@@ -23,7 +23,7 @@ class RecipephotosController < ApplicationController
 
   private
   def recipephoto_params
-    params.require(:recipephoto).permit(:text, :sub_image).merge(recipe_id: params[:recipe_id])
+    params.require(:recipephoto).permit(:text,  images: []).merge(recipe_id: params[:recipe_id])
   end
 
 end

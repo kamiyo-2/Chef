@@ -35,13 +35,62 @@
               </li>
             <% end %>
           </div>
+          <div class="actions">
+            <%= f.submit "保存する", class: :form__btn  %>
+          </div>
         </div>
       </div>
-      
+<<<<<<< Updated upstream
+    <% end %>
+  </div>
+</div>
+
+
+=======
+      <div id="detail-association-insertion-point"></div>
+        <%= f.fields_for :foodstuffs, @recipe.foodstuffs do |foodstuff| %>
+          <%= render "foodstuff_fields", f: foodstuff %>
+        <% end %>
+      </div>
+      <div class="add-botton-box">
+        <%= link_to_add_association "追加", f,:foodstuffs %>
+      </div>
       <div class="actions">
         <%= f.submit "保存する", class: :form__btn  %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+<%# 
+<%= f.fields_for : @recipe.foodstuffs do |t| %> 
+    <%# <%= render "recipes/foodstuff_fields", f: t %> 
+  <%# <% end %> 
+
+  <!-- 食材追加ボタン -->
+  <%# <%= link_to_add_association "追加", f,:foodstuffs %> 
+<%# </div> %>
+
+
+
+            <span class="mb-2">jQueryフォーム追加削除</span>
+          </div>
+          <div class="card-body">
+
+<div id="demo-area" class="form-group">
+  <div class="unit input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text">TEST</span>
+    </div>
+    <input name="test[]" type="text">
+    <div class="demo-minus input-group-append">
+      <span class="btn btn-danger">-</span>
+    </div>
+  </div>
+</div>
+
+<div id="demo-plus" class="btn btn-primary">+</div>
+>>>>>>> Stashed changes
 

@@ -11,13 +11,14 @@ class FoodstuffsController < ApplicationController
   def create
     @foodstuff = Foodstuff.new(foodstuff_params)
   
-
-
-
+    if @foodstuff.save
+   
+      redirect_to recipe_path(@foodstuff.recipe_id), method: :get
+    else
       @recipe = @foodstuff.recipe
       @foodstuffs = @recipe.foodstuffs
       render :new
-
+    end
   end
 
   def edit
