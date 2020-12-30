@@ -60,6 +60,16 @@
         <% end %>
         </div>
       </div>
+       <div class="title-content">
+       <% @foodstuffs.each do |foodstuff| %>
+         <div class="title-name">
+           <p><%= foodstuff.material %></p> 
+         </div>
+         <div class="valu-name">
+           <%= foodstuff.quantity %>
+         </div>
+        <% end %>
+     </div>
 
     </div>
   </div>
@@ -70,29 +80,29 @@
             <div class="title-name">
               <p>作り方</p>
                  <div class="prototype__comments">
-          <% if user_signed_in?%>
+        <% if user_signed_in?%>
 
           <%= form_with(model: [@recipe, @recipephoto], local: true) do |f| %>
-          <%= f.text_field :text %>
-          <%= f.file_field :images, name: 'recipephoto[images][]', id: 'recipephoto_image' %>
-          <div class="actions">
-            <%= f.submit "保存する", class: :form__btn  %>
-          </div>
-          <div id="image-list"></div>
-        <% end%>
-          <% end %> 
+            <%= f.text_field :text %>
+            <%= f.file_field :images, name: 'recipephoto[images][]', id: 'recipephoto_image' %>
+            <div class="actions">
+              <%= f.submit "保存する", class: :form__btn  %>
+            </div>
+            <div id="image-list"></div>
+          <% end%>
+        <% end %> 
           <ul class="comments_lists">
             <% if @recipephotos %>
-           <% @recipephotos.each do |recipephoto| %>
+              <% @recipephotos.each do |recipephoto| %>
               <li class="comments_list">
-              <p>
-               <%= recipephoto.text %>
-               <%= image_tag recipephoto.images[0] %>
-                 <%# <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %> 
-              </p> 
+                <p>
+                  <%= recipephoto.text %>
+                  <%= image_tag recipephoto.images[0] %>
+                  <%# <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %> 
+                </p> 
               </li>
               <% end %>
-             <% end %>
+            <% end %>
           </ul>
         </div>
             </div>
