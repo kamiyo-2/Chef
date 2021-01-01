@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function() {
     const ImageList = document.getElementById('image-list')
@@ -42,7 +42,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     });
   });
 }
-=======
+
 $(function(){
   function buildField(index) {  // 追加するフォームのｈｔｍｌを用意
     const html = `<div class="js-file-group" data-index="${index}">
@@ -84,4 +84,4 @@ $(function(){
       } 
     })
   })
->>>>>>> Stashed changes
+

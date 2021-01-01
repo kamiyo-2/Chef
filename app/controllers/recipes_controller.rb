@@ -28,12 +28,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-<<<<<<< Updated upstream
     params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: []).merge(user_id: current_user.id)
-=======
-    
-    params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: [], foodstuffs_attributes: [:id, :foodstuff_id,:material, :quantity]).merge(user_id: current_user.id)
->>>>>>> Stashed changes
   end
   # def recipe_params
     
