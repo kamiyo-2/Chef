@@ -5,19 +5,15 @@ class FoodstuffsController < ApplicationController
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs.order(created_at: :desc)
   end
-
   
-
   def create
     @foodstuff = Foodstuff.new(foodstuff_params)
-  
     if @foodstuff.save
-   
-      redirect_to recipe_path(@foodstuff.recipe_id), method: :get
+      redirect_to recipe_path(@foodstuff.recipe)
     else
       @recipe = @foodstuff.recipe
       @foodstuffs = @recipe.foodstuffs
-      render :new
+      render "recipes/show"
     end
   end
 

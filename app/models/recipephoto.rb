@@ -1,7 +1,8 @@
 class Recipephoto < ApplicationRecord
-  has_many_attached :images
   belongs_to :recipe, optional: true
-
-  validates :text,        presence: true
-  validates :images,     presence: true
+  
+  has_one_attached :sub_image
+  
+  validates :text, presence: true
+  validates :sub_image, presence: true
 end

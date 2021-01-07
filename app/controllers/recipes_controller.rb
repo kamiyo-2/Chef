@@ -11,18 +11,16 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipe_path(@recipe.id)
     else
-      render :new
+      redirect_to recipe_path(@recipephoto.recipe)
     end
   end
-
-  
 
   def show
     @recipe = Recipe.find(params[:id])
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos
+    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
   end
 
 

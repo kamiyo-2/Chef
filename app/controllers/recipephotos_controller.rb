@@ -6,24 +6,20 @@ class RecipephotosController < ApplicationController
     @recipephoto = Recipephoto.new
   end
 
-
-
-
   def create
     @recipephoto = Recipephoto.new(recipephoto_params)
     if @recipephoto.save
-
-      redirect_to recipe_path(@recipephoto.recipe_id), method: :get
+      redirect_to recipe_path(@recipephoto.recipe)
     else
       @recipe = @recipephoto.recipe
       @recipephotos = @recipe.recipephotos
-      render root_path
+      render "recipes/show"
     end
   end
-
+  
   private
   def recipephoto_params
-    params.require(:recipephoto).permit(:text,  images: []).merge(recipe_id: params[:recipe_id])
+    params.require(:recipephoto).permit(:text, :sub_image).merge(recipe_id: params[:recipe_id])
   end
 
 end

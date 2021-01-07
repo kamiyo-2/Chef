@@ -1,0 +1,56 @@
+<!-- コメント内容(２件) ------------------------------------------------------------------>
+<%= recipephotos.count %>件コメント
+<h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+<% recipephotos.first(2).each do |recipephoto| %>
+  <% unless recipephoto.id.nil? %>
+    <li class="comment-container">
+        <div class="comment-box">
+            <div class="comment-avatar">
+                <%# <%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image", size: "40x40" %> %>
+            </div>
+            <div class="comment-text">
+                <p><%= link_to "@#{recipephoto.recipe.user.name}", users_user_path(recipephoto.recipe.user.id) %></p>
+                <div class="comment-entry">
+                    <%= recipephoto.content %>
+                    <% if recipephoto.recipe.user == current_user %>
+                        <%= link_to recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                            <i class="fas fa-trash" style="color: black;"></i>
+                        <% end %>
+                    <% end %>
+                </div>
+                <span class="comment-date pull-right">
+                      <%= recipephoto.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                </span>
+            </div>
+        </div>
+    </li>
+  <% end %>
+<% end %>
+<!-- コメント内容(3件目以降) ------------------------------------------------------------------>
+    <div class="collapse" id="collapseExample">
+            <% recipephotos.offset(2).each do |recipephoto| %>
+              <% unless recipephoto.id.nil? %>
+                <li class="comment-container">
+                    <div class="comment-box">
+                        <div class="comment-avatar">
+                            <%# <%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image", size: "40x40" %> %>
+                        </div>
+                        <div class="comment-text">
+                            <p><%= link_to "@#{recipephoto.recipe.user.name}", users_user_path(recipephoto.recipe.user.id) %></p>
+                            <div class="comment-entry">
+                                <%= recipephoto.content %>
+                                <% if recipephoto.recipe.user == current_user %>
+                                    <%= link_to recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                                        <i class="fas fa-trash" style="color: black;"></i>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                            <span class="comment-date pull-right">
+                                  <%= recipephoto.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+              <% end %>
+            <% end %>
+    </div>
