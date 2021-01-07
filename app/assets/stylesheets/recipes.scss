@@ -34,3 +34,41 @@ padding: 70px 100px;
 .image-content img  {
   height: 400px;
 }
+
+// recipe.show
+
+.recipephoto img {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.recipephoto_text {
+  padding: 10px;
+}
+
+.recipephoto_forms {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image_content {
+  width: 28%;
+  margin: 15px 2.5%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F96167;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fffefc;
+  margin: 15px;
+  float: left;
+  box-shadow: 3px 3px 3px 3px #faebd7;
+}
+
+.image_photos div img {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+}
