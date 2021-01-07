@@ -19,7 +19,7 @@
   margin: 15px 2.5%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #F96167;
+
   padding: 5px;
   border-radius: 10px;
   background-color: #fffefc;
@@ -27,14 +27,14 @@
   margin: 15px;
   float: left;
 
-  box-shadow: 3px 3px 3px 3px #faebd7;
+
 }
 
 .tag-image{
   
   margin: 0 0;
   
-  background-color: #F5F5F5;
+
   
   border-radius: 10px;
   width: 100%;
@@ -47,28 +47,11 @@
   font-size: 40px;
 }
 
-img {
-  max-width: 100%;
+.tag-image a img {
+  max-width: 300px;
+  border-radius: 15px;
   vertical-align: bottom;
 }
-
-
-.attachment {
- 
-  margin: 0 0;
-  
-  background-color: #F5F5F5;
-  
-  border-radius: 10px;
-  width: 100%;
-    height: 260px;
-    object-fit: cover;
-    object-position: 50% 100%;
-}
-
-
-
-
 
 .tag-images {
   
