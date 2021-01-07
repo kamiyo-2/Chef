@@ -11,7 +11,9 @@
 
   <body>
    <header>
-      <a><%= link_to "SHEF", root_path,  class: :logo %></a>
+      <a href="/">
+    <%= image_tag "CHEF.img.png",  width: '160px', height: '80px' %>
+            </a>
       <div class="nav_botton">
         <ul>
           <% if user_signed_in? %>
