@@ -10,9 +10,6 @@
   </head>
 
   <body>
-  <% 
-=begin
-%>
    <header>
     <div class="header_form">
       <div class="icon">
@@ -35,7 +32,7 @@
         </div>
       </div>
     </header>
-    
+    <%= yield %>
     <footer>
 
         <div class="container">
@@ -43,9 +40,5 @@
         </div>
 
     </footer>
-    <%
-=end
-%>
-<%= yield %>
   </body>
 </html>
