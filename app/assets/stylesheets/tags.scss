@@ -4,7 +4,7 @@
 
 
 .tag-inner {
-  padding: 0 100px;
+  padding: 0 20%;
 }
 
 
@@ -26,6 +26,7 @@
   height: 260px;
   object-fit: cover;
   object-position: 50% 100%;
+  padding: 10px;
 }
 
 .tag-name{
@@ -34,28 +35,36 @@
 
 .tag-image a img {
   height: 230px;
-  width: 300px;
+  width: 100%;
   border-radius: 15px;
   vertical-align: bottom;
 }
 
 .tag_link a {
   text-decoration: none;
+  color: black;
 }
 
 .tag-images {
-  
-  margin: 0 0;
-  
-  background-color: #F5F5F5;
-  
-  border-radius: 10px;
-  width: 100%;
-  height: 260px;
+
+
 }
 
 .tag-images img {
-  height: 100%;
-  max-width: 100%;
+  height: 230px;
+  width: 100%;
+  border-radius: 15px;
   vertical-align: bottom;
+}
+
+.tag-content-show{
+  margin: 15px;
+  width: 28%;
+  flex-wrap:wrap;
+}
+
+.tag_link a:hover {
+
+
+  color: red;
 }
