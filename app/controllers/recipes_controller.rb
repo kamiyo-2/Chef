@@ -23,6 +23,21 @@ class RecipesController < ApplicationController
     @recipephotos = @recipe.recipephotos.order(created_at: :desc)
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user != current_user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    recipe = Recipe.find(params[:id])
+    if recipe.update(recipe_params)
+      redirect_to recipe_path(recipe.id), method: :get
+    else
+      render :edit
+    end
+  end
 
   private
   def recipe_params
