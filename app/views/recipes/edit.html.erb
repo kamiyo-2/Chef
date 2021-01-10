@@ -39,6 +39,7 @@
       <div class="title-content">
         <div class="title-name">
           <p> 材料</p>
+          
 
         <%= form_with(model: [@recipe, @foodstuff], local: true) do |f| %>
     
@@ -111,4 +112,3 @@
     </div>
   </div>
 </div>
-<%= link_to "編集する", edit_recipe_path(@recipe.id), method: :get %>

@@ -9,7 +9,7 @@ class FoodstuffsController < ApplicationController
   def create
     @foodstuff = Foodstuff.new(foodstuff_params)
     if @foodstuff.save
-      redirect_to recipe_path(@foodstuff.recipe)
+      redirect_to recipe_detail_recipe_path(@foodstuff.recipe)
     else
       @recipe = @foodstuff.recipe
       @foodstuffs = @recipe.foodstuffs

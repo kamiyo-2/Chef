@@ -9,7 +9,7 @@ class RecipephotosController < ApplicationController
   def create
     @recipephoto = Recipephoto.new(recipephoto_params)
     if @recipephoto.save
-      redirect_to recipe_path(@recipephoto.recipe)
+      redirect_to recipe_detail_recipe_path(@recipephoto.recipe)
     else
       @recipe = @recipephoto.recipe
       @recipephotos = @recipe.recipephotos
