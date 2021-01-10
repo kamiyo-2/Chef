@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :foodstuffs
     resources :recipephotos
+    member do
+      get 'recipe_detail'
+    end
   end
   resources :tags
   resources :users

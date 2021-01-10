@@ -5,14 +5,21 @@ class RecipesController < ApplicationController
   end
 
   def create
-    
     @recipe = Recipe.new(recipe_params)
     @recipe.valid?
     if @recipe.save
-      redirect_to recipe_path(@recipe.id)
+      redirect_to recipe_detail_recipe_path(@recipe.id)
     else
       redirect_to recipe_path(@recipephoto.recipe)
     end
+  end
+
+  def recipe_detail
+    @recipe = Recipe.find(params[:id])
+    @foodstuff = Foodstuff.new
+    @foodstuffs = @recipe.foodstuffs
+    @recipephoto = Recipephoto.new
+    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
   end
 
   def show
@@ -25,8 +32,12 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @foodstuff = Foodstuff.new
+    @foodstuffs = @recipe.foodstuffs
+    @recipephoto = Recipephoto.new
+    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
     if @recipe.user != current_user
-      redirect_to root_path
+      render :edit
     end
   end
 
