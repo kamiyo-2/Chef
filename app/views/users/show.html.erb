@@ -15,24 +15,16 @@
           </p>
         </div>
         <div class="user_form">
-          <table class="table">
-            <tr>
-              <td class="align-middle">名前</td>
-              <td class="align-middles"><%=  @user.name %></td>
-            </tr>
-            <tr>
-              <td class="align-middle">自己紹介</td>
-              <td class="align-middles-profile"><%= @user.profile %></td>
-            </tr>
-            <tr>
-              <td class="align-middle">部署</td>
-              <td class="align-middles"><%= @user.department  %></td>
-            </tr>
-            <tr>
-              <td class="align-middle">メールアドレス</td>
-              <td class="align-middles"><%= @user.email  %></td>
-            </tr>
-          </table>
+
+              <div class="align-middle">名前</div>
+              <div class="align-middles"><%=  @user.name %></div>
+              <div class="align-middle">自己紹介</div>
+              <div class="align-middles"><%= @user.profile %></div>
+              <div class="align-middle">部署</div>
+              <div class="align-middles"><%= @user.department  %></div>
+              <div class="align-middle">メールアドレス</div>
+              <div class="align-middles"><%= @user.email  %></div>
+
         </div>
       </div>
     </div>
