@@ -39,40 +39,22 @@
       <div class="title-content">
         <div class="title-name">
           <p> 材料</p>
-          
-
-        <%= form_with(model: [@recipe, @foodstuff], local: true) do |f| %>
-    
-          <div class="material-content">
-            <div class="field">
-              <%= f.label :material, "材料" %><br />
-              <%= f.text_field :material %>
-            </div>
-            <div class="field">
-              <%= f.label :quantity, "分量" %><br />
-              <%= f.text_field :quantity %>
-            </div>
-
-            </div>
-              <div class="actions">
-                <%= f.submit "保存する", class: :form__btn  %>
-              </div>
-          </div>
-        <% end %>
         </div>
-      </div>
-       <div class="title-content">
-       <% @foodstuffs.each do |foodstuff| %>
-         <div class="title-name">
-           <p><%= foodstuff.material %></p> 
-         </div>
-         <div class="valu-name">
-           <%= foodstuff.quantity %>
-         </div>
-        <% end %>
-     </div>
+       
 
-    </div>
+
+投稿する
+<div  id="foodstuff_form">
+    <%= render "foodstuff_form", foodstuff: @foodstuff %>
+</div>
+
+コメント一覧
+<div id='foodstuff_area'>
+    <%= render "foodstuffs", foodstuffs: @foodstuffs %>
+</div>
+
+
+
   </div>
   <div class="tag-contents">
     <div class="prototype__comments">
@@ -112,3 +94,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+$("div").css("color", "red");
+</script>
