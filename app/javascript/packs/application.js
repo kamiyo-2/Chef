@@ -10,7 +10,6 @@ require("channels")
 require("./memo")
 require("./recipe")
 require('jquery')
-import "cocoon";
 require('test.js')
 
 

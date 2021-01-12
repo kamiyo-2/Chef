@@ -1,20 +1,17 @@
 class FoodstuffsController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs.order(created_at: :desc)
   end
-  
+
+
   def create
     @foodstuff = Foodstuff.new(foodstuff_params)
-    if @foodstuff.save
-      redirect_to recipe_detail_recipe_path(@foodstuff.recipe)
-    else
-      @recipe = @foodstuff.recipe
-      @foodstuffs = @recipe.foodstuffs
-      render "recipes/show"
-    end
+
+    @foodstuff.save
+
   end
 
   def edit
