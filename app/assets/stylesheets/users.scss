@@ -69,7 +69,7 @@ td.align-middles-profile > input#user_profile{
 
 .user_image_fild {
   padding: 25px 0 0 0;
-    width: 25vw;
+  width: 25vw;
 }
 
 .user_form input.button {
@@ -122,4 +122,57 @@ button.btn_delete:hover {
   margin: 10px 0;
   resize: none;
 }
+
+// users.new
+
+.sign_up_form {
+  padding: 0 10vw;
+
+}
+.sign_up_forms {
+  background: #fafafa;
+}
+
+.field {
+  display: flex;
+  padding: 20px;
+}
+
+.filde_name {
+  width: 200px;
+  font-weight: bold;
+}
+
+.filde_names {
+  width: 153px;
+  font-weight: bold;
+}
+.sign_up_field {
+  width: 100%;
+  resize: none;
+}
+
+
+.sign_up_fields {
+  width: 100%;
+  height: 40px;
+}
+
+input#user_password.sign_up_fields {
+  margin: 0 0 10px 0;
+}
+
+.actions_up input {
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+}
+
+.actions_up input:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+  background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
 

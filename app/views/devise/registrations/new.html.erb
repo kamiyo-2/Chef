@@ -1,48 +1,46 @@
 <div class="main_form">
-<h2>Sign up</h2>
-
+<h1>新規登録</h1>
+  <div class="sign_up_form">
+    <div class="sign_up_forms">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-
  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_area :name, autofocus: true, autocomplete: "name" %>
+    <div class="filde_name">お名前</div>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "sign_up_fields", placeholder: "お名前" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="filde_name">メールアドレス</div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "sign_up_fields", placeholder: "半角英数字" %>
   </div>
 
   <div class="field">
-    <%= f.label :profile %><br />
-    <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
+     <div class="filde_name">プロフィール</div>
+    <%= f.text_area :profile, autofocus: true, autocomplete: "profile", class: "sign_up_field", placeholder: "プロフィール" %>
   </div>
  
 
   <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_area :department, autofocus: true, autocomplete: "department" %>
+     <div class="filde_name">所属</div>
+    <%= f.text_field :department, autofocus: true, autocomplete: "department", class: "sign_up_fields", placeholder: "部署" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="filde_names">パスワード</div>
+    <div class="field_password">
+    <%= f.password_field :password, autocomplete: "new-password", class: "sign_up_fields", placeholder: "半角英数字 (6文字〜)" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "sign_up_fields", placeholder: "もう一度入力してください" %>
+  </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="actions_up">
+    <%= f.submit "新規登録" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+ 
 <% end %>
-
+</div>
+ </div>
 <%= render "devise/shared/links" %>
 </div>
