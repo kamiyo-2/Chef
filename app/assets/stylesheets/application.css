@@ -55,7 +55,9 @@ header {
  
 }
 
-
+.nav_botton ul li a:hover {
+color: red;
+}
 
 header.scroll-nav {
   padding: 10px 50px;
