@@ -16,59 +16,46 @@
 
 .main_form {
   padding: 150px 0 0 0;
-  height :100vh;
+  height :100％;
 }
 
 .header_form {
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 
 .icon {
-  padding: 0 0 0 100px;
+padding: 0 100px;
 }
 
 header {
   background-color: #FCE77D;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 10;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.5s;
+
 }
-.logo {
-  color: black;
-  text-decoration: none;
-  font-size: 2rem;
-  transition: 0.5s;
-  text-align: left;
+
+.nav_botton {
+  width: 100vw;
+  padding: 25px 0;
 }
 
 .nav_botton ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .nav_botton ul li {
   list-style: none;
+  padding: 0 15px;
 }
 
 .nav_botton ul li a {
   text-decoration: none;
   color: black;
-  margin: 0 15px;
-  transition: 0.5s;
+ 
 }
 
-.nav_botton {
-  margin: 30px 0 0 800px;
-}
+
 
 header.scroll-nav {
   padding: 10px 50px;
