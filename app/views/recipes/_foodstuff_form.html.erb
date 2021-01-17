@@ -1,11 +1,13 @@
 <%= form_for [@recipe, @foodstuff], remote: true do |f| %>
-  <div class="field">
-    <%= f.label :material, "材料" %><br />
-    <%= f.text_field :material %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity, "分量" %><br />
-    <%= f.text_field :quantity %>
+  <div class="foodstuff_form">
+    <div class="field">
+      <%= f.label :material, "材料" %><br />
+      <%= f.text_field :material %>
+    </div>
+    <div class="field">
+      <%= f.label :quantity, "分量" %><br />
+      <%= f.text_field :quantity %>
+    </div>
   </div>
   <%= f.submit :送信 %>
 <% end %>
