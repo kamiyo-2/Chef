@@ -5,11 +5,14 @@
         <div class="title-name">
           <p> 材料</p>
         </div>
-        <div id="foodstuff_form">
-          <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
+
+
+ 
+
+        <div id="foodstuffs_area">
+          <%= render "foodstuffs/index", foodstuffs: @foodstuffs %>
         </div>
-        <div id='foodstuff_area'>
-          <%= render "foodstuffs/recipes/foodstuffs", foodstuffs: @foodstuffs %>
+          <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
         </div>
       </div>
       <div class="tag-contents">

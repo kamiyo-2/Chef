@@ -1,13 +1,15 @@
-<%= form_for [@recipe, @foodstuff], remote: true do |f| %>
-  <div class="foodstuff_form">
-    <div class="field">
+
+<%= form_with(model: [recipe, foodstuff] ) do |f| %>
+   <div class="field">
       <%= f.label :material, "材料" %><br />
-      <%= f.text_field :material %>
+      <%= f.text_area :material %>
     </div>
     <div class="field">
       <%= f.label :quantity, "分量" %><br />
-      <%= f.text_field :quantity %>
+      <%= f.text_area :quantity %>
     </div>
   </div>
-  <%= f.submit :送信 %>
+  <div class="actions">
+    <%= f.submit "コメントをする" %>
+  </div>
 <% end %>
