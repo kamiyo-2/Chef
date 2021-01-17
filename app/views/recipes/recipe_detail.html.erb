@@ -1,91 +1,23 @@
 <div class="main_form">
   <div class="tag-inner">
     <div class="">
-      <h2 class="page-heading">新規レシピ投稿</h2>       
-      <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
-        <div class="field">
-          <%= f.label :process, "作り方" %><br />
-            <p class="detail__message">
-              <%= @recipe.process %>
-            </p>
-        </div>  
-        <div class="main-contents">
-          <div class="image-content">
-            <%= image_tag @recipe.main_image %>
-         </div>
-         <div class="from-content">
-          <div class="title-content">
-            <div class="title-name">
-              <p> レシピ</p>
-            </div>
-          </div>
-          <div class="title-content">
-            <div class="title-name">
-              <p> 料理名 </p>
-            </div>
-            <div class="valu-name">
-              <p><%= @recipe.title %></p>
-            </div>
-          </div>
-          <div class="details-content">
-            <div class="title-name">
-              <p> 分量(何人前) </p>
-            </div>   
-            <div class="valu-name">
-              <p> <%= @recipe.details %></p>
-            </div>
-          </div>    
-      <% end %>
       <div class="title-content">
         <div class="title-name">
           <p> 材料</p>
         </div>
-       
-
-
-投稿する
-<div  id="foodstuff_form">
-    <%= render "foodstuff_form", foodstuff: @foodstuff %>
-</div>
-
-コメント一覧
-<div id='foodstuff_area'>
-    <%= render "foodstuffs", foodstuffs: @foodstuffs %>
-</div>
-
-
-
-  </div>
-  <div class="tag-contents">
-    <div class="prototype__comments">
-      <ul class="comments_lists">
-          <div class="title-content">
-            <div class="title-name">
-              <p>作り方</p>
-              <div class="prototype__comments">
-                <% if user_signed_in?%>
-                  <%= form_with(model: [@recipe, @recipephoto], local: true) do |f| %>
-                    <%= f.text_field :text %>
-                    <%= f.file_field :sub_image %>
-                      <div class="actions">
-                        <%= f.submit "保存する", class: :form__btn  %>
-                      </div>
-                  <% end%>
-                <% end %> 
-                <div class="recipephoto_forms">
-                  <% if @recipephotos %>
-                    <% @recipephotos.each do |recipephoto| %>
-                      <div class="image_content">
-                        <div class="recipephoto">
-                          <%= image_tag recipephoto.sub_image %>
-                          <div class="recipephoto_text">
-                            <%= recipephoto.text %>
-                          </div>
-                        </div>
-                      </div>
-                    <% end %>
-                  <% end %>
-                </div>
+        <div id="foodstuff_form">
+          <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
+        </div>
+        <div id='foodstuff_area'>
+          <%= render "foodstuffs/recipes/foodstuffs", foodstuffs: @foodstuffs %>
+        </div>
+      </div>
+      <div class="tag-contents">
+        <div class="prototype__comments">
+          <ul class="comments_lists">
+            <div class="title-content">
+              <div class="title-name">
+                <p>作り方</p>
               </div>
             </div>
           </div>
@@ -94,7 +26,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-$("div").css("color", "red");
-</script>

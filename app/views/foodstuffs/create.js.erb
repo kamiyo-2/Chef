@@ -1,0 +1,3 @@
+$('#foodstuff_area').html("<%= escape_javascript(render 'foodstuffs/recipes/foodstuffs', foodstuffs: @foodstuffs) %>");
+$('#foodstuff_form').html("<%= escape_javascript(render 'recipes/foodstuff_form', recipe: @recipe, foodstuff: @foodstuff) %>");
+

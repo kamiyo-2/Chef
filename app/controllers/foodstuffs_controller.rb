@@ -9,9 +9,10 @@ class FoodstuffsController < ApplicationController
 
   def create
     @foodstuff = Foodstuff.new(foodstuff_params)
-
-    @foodstuff.save
-
+    @foodstuffs = Foodstuff.all
+    if @foodstuff.save
+    @foodstuff = Foodstuff.new
+    end
   end
 
   def edit
