@@ -1,0 +1,19 @@
+<% foodstuffs.each do |foodstuff| %>
+
+  <% unless foodstuff.id.nil? %>
+  <div class="foodstuff_form">
+  <div class="foodstuf_field">
+
+   <p><%= foodstuff.material %></p> 
+    </div>
+    <div class="foodstuf_field">
+  <%= foodstuff.quantity %>
+    </div>
+   
+
+       <%= button_to '削除', recipe_foodstuff_path(foodstuff.recipe_id, foodstuff.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'foodstuff_btn'%>
+
+     </div>
+  <% end %>
+<% end %>
+
