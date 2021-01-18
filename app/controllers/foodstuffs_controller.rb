@@ -1,35 +1,35 @@
 class FoodstuffsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  def new
-    @recipe = Recipe.find(params[:recipe_id])
-    @foodstuff = Foodstuff.new
-    @foodstuffs = @recipe.foodstuffs.order(created_at: :desc)
-  end
-
 
   def create
     @recipe = Recipe.find params[:recipe_id]
-    @foodstuff = Foodstuff.new(foodstuff_params)
-    @foodstuffs = @recipe.foodstuffs.order(created_at: :desc)
-    if @foodstuff.save!
-      render :create
+    @foodstuff = @recipe.foodstuffs.build(foodstuff_params)
+    if @foodstuff.save
+      respond_to do |format|
+        format.js { render :file => 'foodstuffs/create.js.erb' }
+        
+    end
+
     end
   end
+
+
 
   def edit
     @recipe = Recipe.find(params[:recipe_id])
-    @foodstuffs = Foodstuff.where(recipe_id: @recipe.id)
     @foodstuff = Foodstuff.new
+    @foodstuffs = Foodstuff.where(recipe_id: @recipe.id)
+  
   end
 
   def destroy
-    @foodstuff = Foodstuff.find(params[:id]) #⑤
-    if @foodstuff.destroy!
+    @foodstuff = Foodstuff.find(params[:id])
+    @foodstuff.destroy
       render :create
-    end
   end
 
-  
+
+ 
 
   private
   def foodstuff_params

@@ -22,6 +22,8 @@ class RecipesController < ApplicationController
     @recipephotos = @recipe.recipephotos.order(created_at: :desc)
   end
 
+  
+
   def show
     @recipe = Recipe.find(params[:id])
     @foodstuff = Foodstuff.new

@@ -2,15 +2,13 @@
   <div class="tag-inner">
     <div class="">
       <div class="title-content">
-        <div class="title-name">
+        <div class="title_name">
           <p> 材料</p>
+          <p> 分量</p>
         </div>
-
-
- 
-
+        <%# <%= render "recipe", recipe: @recipe %> %>
         <div id="foodstuffs_area">
-          <%= render "foodstuffs/index", foodstuffs: @foodstuffs %>
+          <%= render "foodstuffs/create", foodstuffs: @foodstuffs %>
         </div>
           <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
         </div>
@@ -29,3 +27,10 @@
     </div>
   </div>
 </div>
+
+
+
+        <div id="recipephotos_area">
+          <%= render "recipephotos/create", recipephotos: @recipephotos %>
+        </div>
+          <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
