@@ -51,8 +51,25 @@
       </div>
       <div class="recipephoto_form">
 
-        <div id="recipephotos_area">
-          <%= render "recipephotos/create", recipephotos: @recipephotos %>
+          <div class="title_recipe">レシピ画像・テキスト</div>
+<div class="tag-contents">
+  <% @recipephotos.each do |recipephoto| %>
+    <div class="tag-content-show">
+      <div class='tag-images'>
+        <%= image_tag recipephoto.sub_image %>
+      </div>
+      <p class="tag_link">
+        <p><%= recipephoto.text %></p> 
+      </p>
+
+    </div> 
+  <% end %>
+</div>
+
+
+
+ 
+
         </div>
 
 
