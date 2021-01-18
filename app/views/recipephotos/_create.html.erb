@@ -1,14 +1,17 @@
-<% recipephotos.each do |recipephoto| %>
-  <% unless recipephoto.id.nil? %>
-  <div class="foodstuff_form">
-  <div class="foodstuf_field">
-   <p><%= recipephoto.text %></p> 
+      <div class="tag-contents">
+        <% recipephotos.each do |recipephoto| %>
+          <div class="tag-content-show">
+            <div class='tag-images'>
+              <%= image_tag recipephoto.sub_image %>
+            </div>
+            <p class="tag_link">
+              <p><%= recipephoto.text %></p> 
+            </p>
+             <%= button_to '削除', recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'recipephoto_btn'%>
+          </div> 
+        <% end %>
+      </div>
     </div>
-    <div class="foodstuf_field">
-  <%= image_tag recipephoto.sub_image, width: '80%', height: '80%'%>
-    </div>
-       <%= button_to '削除', recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'foodstuff_btn'%>
-     </div>
-  <% end %>
-<% end %>
 
+
+ 
