@@ -4,13 +4,16 @@
 
 .foodstuff_form {
   display: flex;
+  margin: 3px 0;
+}
+
+.foodstuff_forms {
+  display: flex;
 }
 
 .foodstuf_field {
-  width: 10px 13vw;
-  border: 2px solid red;
-  padding: 10px 120px;
-  
+  width: 44%;
+  border: 2px solid red;  
 }
 
 .foodstuff_btn {
@@ -23,8 +26,43 @@
 }
 
 .foodstuff_text {
-  height: 30px;
+  height: 25px;
+  width: 40%;
+  margin: 10px 3vw;
+}
 
-  width: 27vw;
+.foodstuff_texts {
+  height: 25px;
+  width: 20%;
+  margin: 10px 3vw;
+}
 
+.foodstuffs_text {
+  height: 25px;
+  width: 36%;
+  margin: 10px 3vw;
+  border: 1px solid silver;
+}
+
+.foodstuffs_texts {
+  height: 25px;
+  width: 17%;
+  margin: 10px 3vw;
+  border: 1px solid silver;
+}
+
+.actions_foodstuff {
+  margin: 10px 1vw;
+}
+
+.actions_foodstuffs {
+  margin: 10px 1vw;
+}
+
+textarea#foodstuff_material.foodstuff_text {
+  width: 40%;
+}
+
+.foodstuff_text p {
+  width: 40%;
 }

@@ -1,36 +1,51 @@
-<div class="main_form">
-  <div class="tag-inner">
+<div class="form_wrapper">
+  <div class="form_inner">
     <div class="">
       <div class="title-content">
-        <div class="title_name">
-          <p> 材料</p>
-          <p> 分量</p>
+        <h2>新規レシピ投稿</h2>
+        <div class="field">
+          <%= @recipe.process %>
         </div>
-        <%# <%= render "recipe", recipe: @recipe %> %>
-        <div id="foodstuffs_area">
+        <div class="main_contents">
+          <div class="image-content">
+            <%= image_tag @recipe.main_image %>
+          </div>
+          <div class="text_content">
+            <div class="title_recipe">レシピ</div>
+            <div class="title_content">
+              <div class="title_field">
+                <P>レシピ名</p>
+              </div>
+              <div class="title_fields">
+                <p><%= @recipe.title %></p>
+              </div>
+            </div>
+            <div class="title_content">
+              <div class="title_field">
+                <P>分量(何人前)</p>
+              </div>
+              <div class="title_fields">
+                <p><%= @recipe.details %></p>
+              </div>
+            </div>
+             <div class="title_recipe">材料</div>
+             <div id="foodstuffs_area">
           <%= render "foodstuffs/create", foodstuffs: @foodstuffs %>
         </div>
           <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
-        </div>
-      </div>
-      <div class="tag-contents">
-        <div class="prototype__comments">
-          <ul class="comments_lists">
-            <div class="title-content">
-              <div class="title-name">
-                <p>作り方</p>
-              </div>
-            </div>
           </div>
         </div>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
+    
+      </div>
+      <div class="recipephoto_form">
 
         <div id="recipephotos_area">
           <%= render "recipephotos/create", recipephotos: @recipephotos %>
         </div>
           <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
