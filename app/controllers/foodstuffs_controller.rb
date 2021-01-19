@@ -3,29 +3,18 @@ class FoodstuffsController < ApplicationController
 
   def create
     @recipe = Recipe.find params[:recipe_id]
-    @foodstuff = @recipe.foodstuffs.build(foodstuff_params)
+    @foodstuff = Foodstuff.new(foodstuff_params)
     if @foodstuff.save
-      respond_to do |format|
-        format.js { render :file => 'foodstuffs/create.js.erb' }
-        
-    end
-
+      render :create
     end
   end
 
-
-
-  def edit
-    @recipe = Recipe.find(params[:recipe_id])
-    @foodstuff = Foodstuff.new
-    @foodstuffs = Foodstuff.where(recipe_id: @recipe.id)
-  
-  end
 
   def destroy
     @foodstuff = Foodstuff.find(params[:id])
-    @foodstuff.destroy
+    if @foodstuff.destroy
       render :create
+    end
   end
 
 

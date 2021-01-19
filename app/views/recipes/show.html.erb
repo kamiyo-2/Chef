@@ -6,6 +6,9 @@
         <div class="field">
           <%= @recipe.process %>
         </div>
+        <% if user_signed_in? && current_user.id == @recipe.user_id %>
+          <%= link_to "編集する", edit_recipe_path(@recipe.id), method: :get %>
+        <% end %>
         <div class="main_contents">
           <div class="image-content">
             <%= image_tag @recipe.main_image %>
@@ -46,13 +49,13 @@
       </div>
       <div class="recipephoto_form">
         <div class="title_recipe">レシピ画像・テキスト</div>
-        <div class="tag-contents">
+        <div class="recipe-contents">
           <% @recipephotos.each do |recipephoto| %>
-            <div class="tag-content-show">
-              <div class='tag-images'>
+            <div class="recipe-content-show">
+              <div class='recipephoto-images'>
                 <%= image_tag recipephoto.sub_image %>
               </div>
-              <p class="tag_link">
+              <p class="recipephoto_texts">
                 <p><%= recipephoto.text %></p> 
               </p>
             </div> 

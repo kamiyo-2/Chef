@@ -1,11 +1,9 @@
 <%= form_for [@recipe, @foodstuff], remote: true do |f| %>
   <div class="foodstuff_form">
- <div class="foodstuff_forms">
+    <div class="foodstuff_forms">
       <%= f.text_area :material, placeholder: "     追加する材料" , class: "foodstuff_text" %>
-
-
       <%= f.text_area :quantity, placeholder: "    分量", class: "foodstuff_texts" %>
- </div>
+    </div>
     <div class="actions_foodstuff">
       <%= f.submit "追加" %>
     </div>
