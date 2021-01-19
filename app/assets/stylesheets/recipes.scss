@@ -115,3 +115,32 @@ padding: 70px 100px;
 div .foodstuff_text {
 
 }
+
+.recipe-content-show{
+  margin: 15px;
+  width: 28%;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+  border-radius: 17px;
+  padding: 8px 0 0px 1vw;
+}
+
+.recipephoto_texts {
+
+}
+.recipe-content-show p {
+  padding: 5px 10px;
+}
+
+.recipe-contents {
+  width: 107%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipephoto-images img {
+  height: 230px;
+  width: 95%;
+  border-radius: 15px;
+  vertical-align: bottom;
+}

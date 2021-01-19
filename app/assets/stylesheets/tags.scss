@@ -68,3 +68,14 @@
 
   color: red;
 }
+
+.check_box {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.tag-list {
+  width: 20%;
+  padding: 5px 0;
+  font-size: 14px;
+}
