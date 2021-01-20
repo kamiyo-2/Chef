@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-   
+    @recipes = Recipe.search(params[:search])
   end
 
   def new
@@ -66,6 +66,9 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(recipe), notice: 'この作品を非公開にしました'
   end
 
+  def search
+    @recipes = Recipe.search(params[:search])
+  end
   
 
 

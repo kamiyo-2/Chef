@@ -1,7 +1,14 @@
 <div class="main_form">
+ 
   <div class="tag-inner">
     <div class="tag-contents">
       <div class="title_recipe">タグ一覧</div>
+      <div class="search">
+        <%= form_tag(search_recipes_path,:method => 'get') do %>
+          <%= text_field_tag :search, '', placeholder: "キーワード" %>
+          <%= submit_tag '検索', :name => nil %>
+        <% end %>
+      </div>
       <div class="tag-content">
         <div class='tag-image'>
           <%= link_to image_tag("french.1.jpg", class:"image_switch"), "/tags/1" %>
@@ -70,3 +77,4 @@
     </div>
   </div>
 </div>
+

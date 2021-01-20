@@ -10,8 +10,11 @@ Rails.application.routes.draw do
       patch 'nonrelease'
       patch 'release'
     end
+    collection do
+      get 'search'
+    end
   end
-  resources :tags
+  resources :tags 
   resources :users do
   member do
     get 'nonreleases'
