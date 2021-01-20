@@ -3,21 +3,19 @@
     <div class="">
       <div class="title-content">
         <h2>新規レシピ投稿</h2>
-        <div class="field">
-          <%= @recipe.process %>
-        </div>
+        
         <div class="main_contents">
-          <div class="image-content">
+          <div class="image-contents">
             <%= image_tag @recipe.main_image %>
           </div>
           <div class="text_content">
-            <div class="title_recipe">レシピ</div>
+             <div class="title_recipe"><p><%= @recipe.title %></p></div>
             <div class="title_content">
               <div class="title_field">
                 <P>レシピ名</p>
               </div>
               <div class="title_fields">
-                <p><%= @recipe.title %></p>
+                <%= @recipe.process %>
               </div>
             </div>
             <div class="title_content">
@@ -45,6 +43,7 @@
           <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
 
       </div>
+        <a><%= button_to "保存", root_path,  class: :root_btn %></a>
     </div>
   </div>
 </div>

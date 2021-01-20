@@ -27,12 +27,31 @@ padding: 70px 100px;
   box-shadow: 3px 3px 3px 3px #faebd7;
 }
 
+.image-contents {
+  width: 45%;
+  margin: 15px 2.5%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F96167;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fffefc;
+  margin: 15px;
+  float: left;
+  box-shadow: 3px 3px 3px 3px #faebd7;
+}
+
 .text-content {
   width: 50%;
 }
 
 .image-content img  {
   height: 400px;
+
+}
+.image-contents img  {
+  height: 400px;
+  object-fit: contain;
 }
 
 // recipe.show
@@ -41,10 +60,12 @@ padding: 70px 100px;
   height: 250px;
   width: 250px;
   border-radius: 10px;
+  object-fit: contain;
 }
 
 .recipephoto_text {
   padding: 10px;
+  resize: none;
 }
 
 .recipephoto_forms {
@@ -71,6 +92,7 @@ padding: 70px 100px;
   height: 250px;
   width: 250px;
   border-radius: 10px;
+  object-fit: contain;
 }
 
 
@@ -143,4 +165,9 @@ div .foodstuff_text {
   width: 95%;
   border-radius: 15px;
   vertical-align: bottom;
+  object-fit: contain;
+}
+
+.root_btn{
+  float: right;
 }

@@ -4,12 +4,12 @@
       <div class="title-content">
         <h2>新規レシピ投稿</h2>
 
-     z <%= form_with(model: @recipe, local: true) do |f| %>
+      <%= form_with(model: @recipe, local: true) do |f| %>
         <div class="field">
              <%= f.text_area :process, class: :form_prosess %>
         </div>
         <div class="main_contents">
-          <div class="image-content">
+          <div class="image-contents">
             <%= image_tag @recipe.main_image %>
              <%= f.file_field :main_image %> 
           </div>
