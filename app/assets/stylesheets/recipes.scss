@@ -105,7 +105,10 @@ padding: 70px 100px;
   padding: 10px 13vw;
 }
 
-
+.new_form_text {
+  resize: none;
+  margin: 0 10px;
+}
 
 
 
@@ -122,6 +125,10 @@ padding: 70px 100px;
 .title_recipe {
   font-size: 25px;
   border-bottom: 1px solid silver;
+}
+
+.title_new {
+  font-size: 25px;
 }
 
 .title_field {
@@ -171,3 +178,14 @@ div .foodstuff_text {
 .root_btn{
   float: right;
 }
+
+.recipephoto-img img {
+  height: 230px;
+  width: 95%;
+  border-radius: 15px;
+  vertical-align: bottom;
+}
+
+
+
+
