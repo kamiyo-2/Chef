@@ -65,9 +65,8 @@ class RecipesController < ApplicationController
     recipe.nonreleased! unless recipe.nonreleased?
     redirect_to recipe_path(recipe), notice: 'この作品を非公開にしました'
   end
-  
+
   def search
-    #Viewのformで取得したパラメータをモデルに渡す
     @recipes = Recipe.search(params[:search])
   end
   

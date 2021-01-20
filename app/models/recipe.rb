@@ -14,5 +14,7 @@ class Recipe < ApplicationRecord
   def self.search(search)
     return Recipe.all unless search
     Recipe.where(['title LIKE ?', "%#{search}%"])
+    Recipe.where(['process LIKE ?', "%#{search}%"])
+    Recipe.where(['details LIKE ?', "%#{search}%"])
   end
 end
