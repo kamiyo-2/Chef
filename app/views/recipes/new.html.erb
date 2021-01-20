@@ -2,10 +2,6 @@
   <div class="form_inner">
     <h2>新規レシピ投稿</h2> 
     <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
-      <div class="field">
-        <%= f.label :process, "作り方" %><br />
-        <%= f.text_area :process, class: :form_prosess %>
-      </div>
       <div class="main_contents">
         <div class="image-content">
           <% if @recipe.main_image.attached? %>
@@ -16,13 +12,17 @@
           <%= f.file_field :main_image %> 
         </div>
         <div class="text-content">
-          <div class="field">
+           <div class="field">
             <%= f.label :title, "料理名" %><br />
-            <%= f.text_field :title , class: :form_text%>
+            <%= f.text_field :title , class: :new_form_text %>
+          </div>
+          <div class="field">
+            <%= f.label :process, "紹介文" %><br />
+            <%= f.text_area :process, class: :new_form_text %>
           </div>
           <div class="field">
             <%= f.label :details, "何人前" %><br />
-            <%= f.text_area :details, class: :form_text %>
+            <%= f.text_area :details, class: :new_form_text %>
           </div>
            <span>タグ</span>
           <div class="check_box">
