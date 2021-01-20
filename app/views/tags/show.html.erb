@@ -2,9 +2,7 @@
   <div class="tag-inner">
     <div class='tag-name'>
        <%= @tag.name %>
-         
     </div>
-    
       <div class="tag-contents">
         <% @recipes.each do |recipe| %>
         <% if recipe.status == "released" %>
@@ -17,7 +15,6 @@
             </p>
           </div> 
         <% end %>
-     
       <% end %>
       </div>
     </div>
