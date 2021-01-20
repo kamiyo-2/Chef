@@ -10,7 +10,7 @@
           <%= link_to "編集する", edit_recipe_path(@recipe.id), method: :get %>
         <% end %>
         <div class="main_contents">
-          <div class="image-content">
+          <div class="image-contents">
             <%= image_tag @recipe.main_image %>
           </div>
           <div class="text_content">
@@ -65,9 +65,10 @@
     </div>
   </div>
 </div>
-
+ <% if user_signed_in? && current_user.id == @recipe.user_id %>
 <% if @recipe.released? %>
   <%= link_to '非公開にする', nonrelease_recipe_path(@recipe), method: :patch %>
 <% else %>
   <%= link_to '公開する', release_recipe_path(@recipe), method: :patch %>
+<% end %>
 <% end %>

@@ -26,7 +26,6 @@
           </div>
            <span>タグ</span>
           <div class="check_box">
-           
             <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
               <li class="tag-list">
                 <%= tag.label do %>
