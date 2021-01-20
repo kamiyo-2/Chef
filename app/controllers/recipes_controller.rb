@@ -1,5 +1,9 @@
 class RecipesController < ApplicationController
 
+  def index
+   
+  end
+
   def new
     @recipe = Recipe.new
   end
@@ -53,14 +57,16 @@ class RecipesController < ApplicationController
   def release
     recipe =  Recipe.find(params[:id])
     recipe.released! unless recipe.released?
-    redirect_to edit_recipe_path(recipe), notice: 'この作品を公開しました'
+    redirect_to recipe_path(recipe), notice: 'この作品を公開しました'
   end
 
   def nonrelease
     recipe =  Recipe.find(params[:id])
     recipe.nonreleased! unless recipe.nonreleased?
-    redirect_to edit_recipe_path(recipe), notice: 'この作品を非公開にしました'
+    redirect_to recipe_path(recipe), notice: 'この作品を非公開にしました'
   end
+
+  
 
 
   private

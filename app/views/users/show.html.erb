@@ -12,6 +12,9 @@
           <button class="btn btn-secondary btn-lg edit" >
             <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
           </button>
+          <button class="btn btn-secondary btn-lg edit" >
+            <%= link_to "非公開レシピ一覧",  nonreleases_user_path(current_user), class: 'btn_user_edit' %>
+          </button>
           </p>
         </div>
         <div class="user_form">
@@ -30,14 +33,16 @@
       <div class="title_recipe">レシピ一覧</div>
         <div class="tag-contents">
         <% @recipe.each do |recipe| %>
-          <div class="tag-content-show">
-            <div class='tag-images'>
-              <%= link_to image_tag(recipe.main_image), recipe_path(recipe.id), method: :get %>
-            </div>
-            <p class="tag_link">
-              <%= link_to recipe.title, recipe_path(recipe.id), method: :get %>
-            </p>
-          </div> 
+            <% if recipe.status == "released" %>
+            <div class="tag-content-show">
+              <div class='tag-images'>
+                <%= link_to image_tag(recipe.main_image), recipe_path(recipe.id), method: :get %>
+              </div>
+              <p class="tag_link">
+                <%= link_to recipe.title, recipe_path(recipe.id), method: :get %>
+              </p>
+            </div> 
+          <% end %>
         <% end %>
       </div>
     </div>
