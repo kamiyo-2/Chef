@@ -50,6 +50,19 @@ class RecipesController < ApplicationController
     end
   end
 
+  def release
+    recipe =  Recipe.find(params[:id])
+    recipe.released! unless recipe.released?
+    redirect_to edit_recipe_path(recipe), notice: 'この作品を公開しました'
+  end
+
+  def nonrelease
+    recipe =  Recipe.find(params[:id])
+    recipe.nonreleased! unless recipe.nonreleased?
+    redirect_to edit_recipe_path(recipe), notice: 'この作品を非公開にしました'
+  end
+
+
   private
   def recipe_params
     params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: []).merge(user_id: current_user.id)
