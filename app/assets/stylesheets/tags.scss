@@ -46,23 +46,28 @@
   color: black;
 }
 
-.tag-images {
-
-
+.tags_link {
+  height: 30px;
+  padding: 5px;
 }
 
 .tag-images img {
   height: 230px;
-  width: 100%;
+  width: 95%;
   border-radius: 15px;
   vertical-align: bottom;
   object-fit: contain;
+  background-color: #F5F5F5;
 }
 
 .tag-content-show{
+  margin: 15px; 
+  border: 1px solid #F96167;
   margin: 15px;
   width: 28%;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
+  border-radius: 17px;
+  padding: 8px 0 0px 1vw;
 }
 
 .tag_link a:hover {

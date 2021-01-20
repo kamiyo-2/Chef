@@ -1,7 +1,7 @@
 <div class="recipe-contents">
 <%= form_for [@recipe, @recipephoto], remote: true do |f| %>
     <div class="recipe-content-show">
-      <div class='recipephoto-images'>
+      <div class='recipephoto-img'>
      <%= image_tag ("photo.jpg") , class: "user_image_index" %> 
            <%= f.file_field :sub_image %> 
       </div>

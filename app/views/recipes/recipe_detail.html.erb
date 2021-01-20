@@ -2,7 +2,8 @@
   <div class="form_inner">
     <div class="">
       <div class="title-content">
-        <h2>新規レシピ投稿</h2>
+      <div class="title_new">  <h2>新規レシピ投稿</h2></div>
+      
         
         <div class="main_contents">
           <div class="image-contents">
@@ -12,7 +13,7 @@
              <div class="title_recipe"><p><%= @recipe.title %></p></div>
             <div class="title_content">
               <div class="title_field">
-                <P>レシピ名</p>
+                <p>紹介文</p>
               </div>
               <div class="title_fields">
                 <%= @recipe.process %>
@@ -43,7 +44,7 @@
           <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
 
       </div>
-        <a><%= button_to "保存", root_path,  class: :root_btn %></a>
+        <a><%= link_to "保存", root_path,  class: :root_btn %></a>
     </div>
   </div>
 </div>
