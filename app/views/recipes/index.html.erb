@@ -1,8 +1,14 @@
 <div class="main_form">
   <div class="tag-inner">
-    <div class="title_recipe"><%= @tag.name %></div>
+    <div class="title_recipe">レシピ一覧</div>
+    <div class="search">
+      <%= form_tag(search_recipes_path,:method => 'get') do %>
+        <%= text_field_tag :search, '', placeholder: "キーワード" %>
+        <%= submit_tag '検索', :name => nil %>
+      <% end %>
+    </div>
     <div class="tag-contents">
-      <% @recipes.each do |recipe| %>
+      <% @recipe.each do |recipe| %>
         <% if recipe.status == "released" %>
           <div class="tag-content-show">
             <div class='tag-images'>
@@ -16,6 +22,4 @@
       <% end %>
     </div>
   </div>
-</div> 
- 
-
+</div>
