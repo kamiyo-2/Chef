@@ -10,4 +10,9 @@ class Recipe < ApplicationRecord
   enum status:{nonreleased: 0, released: 1}
 
   validates :title, :details, :process, :main_image, presence: true
+
+  def self.search(search)
+    return Recipe.all unless search
+    Recipe.where(['title LIKE ?', "%#{search}%"])
+  end
 end
