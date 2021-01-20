@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
+
+  def nonreleases
+    @user = User.find(params[:id])
+    @recipes = @user.recipes
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :user_image, :profile, :department,:email)

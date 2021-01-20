@@ -4,7 +4,6 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @recipe = Recipe.new
     @recipes = @tag.recipes
   end
 end

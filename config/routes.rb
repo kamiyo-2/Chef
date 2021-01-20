@@ -6,8 +6,15 @@ Rails.application.routes.draw do
     resources :recipephotos
     member do
       get 'recipe_detail'
+      get 'nonreleases'
+      patch 'nonrelease'
+      patch 'release'
     end
   end
   resources :tags
-  resources :users
+  resources :users do
+  member do
+    get 'nonreleases'
+  end
+end
 end

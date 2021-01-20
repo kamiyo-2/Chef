@@ -66,3 +66,8 @@
   </div>
 </div>
 
+<% if @recipe.released? %>
+  <%= link_to '非公開にする', nonrelease_recipe_path(@recipe), method: :patch %>
+<% else %>
+  <%= link_to '公開する', release_recipe_path(@recipe), method: :patch %>
+<% end %>
