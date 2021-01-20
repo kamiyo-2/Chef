@@ -65,6 +65,7 @@ padding: 70px 100px;
 
 .recipephoto_text {
   padding: 10px;
+  resize: none;
 }
 
 .recipephoto_forms {
@@ -165,4 +166,8 @@ div .foodstuff_text {
   border-radius: 15px;
   vertical-align: bottom;
   object-fit: contain;
+}
+
+.root_btn{
+  float: right;
 }

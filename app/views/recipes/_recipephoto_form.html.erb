@@ -1,13 +1,19 @@
+<div class="recipe-contents">
 <%= form_for [@recipe, @recipephoto], remote: true do |f| %>
-  <div class="recipephoto_form">
-    <div>
-      <%= f.file_field :sub_image %> 
-    </div>
-    <div>
-      <%= f.text_area :text, placeholder: "追加する材料" , class: "recipephoto_text" %>
-    </div>
-    <div class="actions">
+    <div class="recipe-content-show">
+      <div class='recipephoto-images'>
+     <%= image_tag ("photo.jpg") , class: "user_image_index" %> 
+           <%= f.file_field :sub_image %> 
+      </div>
+      <p class="recipephoto_texts">
+        <%= f.text_area :text, placeholder: "追加する材料" , class: "recipephoto_text" %>
+      </p>
+       <div class="actions">
       <%= f.submit "追加" %>
     </div>
-  </div>
-<% end %>
+    </div> 
+  <% end %>
+</div>
+
+
+  
