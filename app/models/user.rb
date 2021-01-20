@@ -14,4 +14,13 @@ class User < ApplicationRecord
          has_one_attached :user_image
   has_many :recipes, dependent: :destroy
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.name = "Guest"
+      user.profile = "ゲストユーザーとしてログインしています。こちらはプロフィールの項目です。" 
+      user.department = "所属している部署を記入"
+      user.password = "123qwe"
+    end
+  end
+
 end
