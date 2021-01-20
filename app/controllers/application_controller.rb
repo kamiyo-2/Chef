@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :department])
   end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.name = "Guest"
+      user.profile = "ゲストユーザーとしてログインしています。こちらはプロフィールの項目です。" 
+      user.password = "123qwe"
+    end
+  end
+
 end
