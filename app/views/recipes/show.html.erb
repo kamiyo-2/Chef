@@ -53,7 +53,15 @@
           <% @recipephotos.each do |recipephoto| %>
             <div class="recipe-content-show">
               <div class='recipephoto-images'>
-                <%= image_tag recipephoto.sub_image %>
+                <% if @recipephoto.sub_image.attached? %>
+                  <div class='recipephoto-images'>
+                    <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
+                  </div>
+                <% else %>
+                  <div class='recipephoto-img'>
+                    <%= image_tag ("photo.jpg") , class: "none_image" %> 
+                  </div>
+                <% end%>
               </div>
               <p class="recipephoto_texts">
                 <p><%= recipephoto.text %></p> 

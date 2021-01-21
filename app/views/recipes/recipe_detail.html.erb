@@ -44,7 +44,7 @@
           <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
 
       </div>
-        <a><%= link_to "公開する", root_path,  class: :root_btn %></a>
+        <a><%= link_to '公開する', release_recipe_path(@recipe), method: :patch %></a>
     </div>
   </div>
 </div>
