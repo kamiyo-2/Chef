@@ -1,7 +1,7 @@
 <div class="form_wrapper">
   <div class="form_inner">
     <div class="title-content">
-      <h2>レシピ編集</h2>
+      <div class="title_recipe">レシピ編集</div>
       <%= form_with(model: @recipe, local: true) do |f| %>
         <div class="main_contents">
           <div class="image-contents">
@@ -32,23 +32,48 @@
                 </li>
               <% end %>
             </div>
-            <div class="actions">
-              <%= f.submit "保存する", class: :form__btn  %>
+            <div class="actions_edit">
+              <%= f.submit "戻る", class: :form_btn  %>
             </div>
       <% end %>
-            <div class="title_recipe">材料</div>
-            <div id="foodstuffs_area">
-              <%= render "foodstuffs/create", foodstuffs: @foodstuffs %>
-            </div>
-            <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
+          <div class="title_recipe">材料</div>
+              <% @foodstuffs.each do |foodstuff| %>
+                <% unless foodstuff.id.nil? %>
+                  <div class="foodstuff_form">
+                    <div class="foodstuffs_text">
+                      <p><%= foodstuff.material %></p> 
+                    </div>
+                    <div class="foodstuffs_texts">
+                      <%= foodstuff.quantity %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
           </div>
         </div>
+      </div>
       <div class="recipephoto_form">
-        <div id="recipephotos_area">
-          <%= render "recipephotos/create", recipephotos: @recipephotos %>
+        <div class="title_recipe">レシピ画像・テキスト</div>
+        <div class="recipe-contents">
+          <% @recipephotos.each do |recipephoto| %>
+            <div class="recipe-content-show">
+              <div class='recipephoto-images'>
+                <% if @recipephoto.sub_image.attached? %>
+                  <div class='recipephoto-images'>
+                    <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
+                  </div>
+                <% else %>
+                  <div class='recipephoto-img'>
+                    <%= image_tag ("photo.jpg") , class: "none_image" %> 
+                  </div>
+                <% end%>
+              </div>
+              <p class="recipephoto_texts">
+                <p><%= recipephoto.text %></p> 
+              </p>
+            </div> 
+          <% end %>
         </div>
-        <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
-    </div>
+      </div>
   </div>
 </div>
-
