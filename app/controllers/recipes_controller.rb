@@ -1,8 +1,9 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.search(params[:search])
+    @recipe = Recipe.includes(:user).order("created_at DESC")
   end
+
 
   def new
     @recipe = Recipe.new

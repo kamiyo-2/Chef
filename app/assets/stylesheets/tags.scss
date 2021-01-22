@@ -11,7 +11,7 @@
 
 
 .tag-contents{
-	width: 100%;
+	width: 103%;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -30,6 +30,18 @@
   object-position: 50% 100%;
   padding: 10px;
 }
+.tag-image:hover {
+  margin: 0 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: 50% 100%;
+  padding: 10px;
+  border: 0.3rem solid #b0deec;
+
+}
+
 
 .tag-name{
   font-size: 40px;
@@ -64,12 +76,23 @@
 
 .tag-content-show{
   margin: 15px; 
+  margin: 15px;
+  width: 28%;
+  flex-wrap: wrap;
+  border-radius: 17px;
+  padding: 8px 0 0px 1vw;
+}
+
+.tag-content-show:hover {
+  margin: 15px; 
   border: 1px solid #F96167;
   margin: 15px;
   width: 28%;
   flex-wrap: wrap;
   border-radius: 17px;
   padding: 8px 0 0px 1vw;
+  border: 0.3rem solid #b0deec;
+
 }
 
 .tag_link a:hover {

@@ -1,6 +1,6 @@
 <div class="main_form">
-<h1>新規登録</h1>
   <div class="sign_up_form">
+  <div class="title_recipe">新規登録</div>
     <div class="sign_up_forms">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -41,6 +41,9 @@
  
 <% end %>
 </div>
+<div class="sgin_path">登録済の方は、
+          <%= link_to "こちら", new_user_session_path, style:"color:#F96167;" %>よりログインを行ってください
+      </div>
  </div>
-<%= render "devise/shared/links" %>
+
 </div>

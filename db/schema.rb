@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_065752) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status", limit: 1, default: 1, null: false
+    t.integer "status", limit: 1, default: 0, null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 

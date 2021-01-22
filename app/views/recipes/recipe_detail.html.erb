@@ -2,9 +2,7 @@
   <div class="form_inner">
     <div class="">
       <div class="title-content">
-      <div class="title_new">  <h2>新規レシピ投稿</h2></div>
-      
-        
+      <div class="title_new"><h2>新規レシピ投稿</h2></div>
         <div class="main_contents">
           <div class="image-contents">
             <%= image_tag @recipe.main_image %>
@@ -44,7 +42,7 @@
           <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
 
       </div>
-        <a><%= link_to "保存", root_path,  class: :root_btn %></a>
+        <a><%= link_to '公開する', release_recipe_path(@recipe), method: :patch %></a>
     </div>
   </div>
 </div>

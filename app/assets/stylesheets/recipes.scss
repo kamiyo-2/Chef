@@ -32,13 +32,13 @@ padding: 70px 100px;
   margin: 15px 2.5%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #F96167;
+  border: 1px solid #474747;
   padding: 12px;
   border-radius: 10px;
   background-color: #fffefc;
   margin: 15px;
   float: left;
-  box-shadow: 3px 3px 3px 3px #faebd7;
+
 }
 
 .text-content {
@@ -66,6 +66,7 @@ padding: 70px 100px;
 .recipephoto_text {
   padding: 10px;
   resize: none;
+  width: 88%;
 }
 
 .recipephoto_forms {
@@ -108,6 +109,8 @@ padding: 70px 100px;
 .new_form_text {
   resize: none;
   margin: 0 10px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 
@@ -124,7 +127,13 @@ padding: 70px 100px;
 
 .title_recipe {
   font-size: 25px;
-  border-bottom: 1px solid silver;
+  border-bottom: 3px solid #b0deec;
+  padding: 10px 0 0 0;
+}
+
+.title_recipes {
+  font-size: 25px;
+  padding: 10px 0 0 0;
 }
 
 .title_new {
@@ -186,6 +195,9 @@ div .foodstuff_text {
   vertical-align: bottom;
 }
 
+.recipephoto-img input {
+  width: 88%;
+}
 
 
 
@@ -195,9 +207,46 @@ div .foodstuff_text {
 }
 
 
+.text_content .actions {
+  float: right;
+}
+
+.button_link {
+  display: flex;
+}
+
+.button_release {
+  padding: 10px;
+  margin: 0 15px;
+  background-color: #b0deec;
+  border-color: #b0deec;
+  border-radius: 10px;
+}
+
+.show_links {
+  display: flex;
+  border-bottom: 3px solid #b0deec;
+}
 
 
+.button_show_link {
 
+  background-color: #474747;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  margin: 10px;
+}
 
-
-
+.buttons_form {
+  display: flex;
+}
+input.form_btn {
+  background-color: #474747;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  margin: 10px;
+}

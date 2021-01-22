@@ -18,7 +18,7 @@
 }
 
 .user_form {
-  width: 54vh;
+  width: 54%;
   padding: 15px 0 0 50px;
 }
 
@@ -35,15 +35,21 @@
   width: 100;
   height: 5vh;
   border: 1px solid #dee2e6;
-  padding: 0 0 0 12px;
+  padding: 10px 0 0 10px;
   border-radius: 30px;
 }
 
 .align-middles-profile {
-  width: 30vw;
-  height: 15vh;
+  margin: 10px 0;
+  width: 100;
+  height: 10vh;
   border: 1px solid #dee2e6;
-  padding: 0 0 0 12px;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.user_btns {
+  padding: 10px 0 10px 64px;
 }
 
 .btn_user_edit {
@@ -53,6 +59,8 @@
 
 button.btn.btn-secondary.btn-lg.edit {
   padding: 9px;
+  height: 45px;
+  width: 150px;
 }
 
 
@@ -73,7 +81,7 @@ td.align-middles-profile > input#user_profile{
 background-color: orange;
 border: none;
 padding: 10px;
-margin: 10px 0 0 228px;
+margin: 10px 0 0 22vw;
 border: solid 2px ;
 color: white;
 border-radius: 15px;
@@ -92,7 +100,7 @@ background-color: red;
 color: white;
 border: none;
 padding: 15px;
-margin: 10px 0 0 40px;
+margin: 10px 0 0 2vw;
 font-size: 17px;
 border: solid 2px ;
 border-radius: 15px;
@@ -123,14 +131,13 @@ button.btn_delete:hover {
 // users.new
 
 .sign_up_form {
-  padding: 0 10vw;
-
+  padding: 0 10vw 50px 10vw;
 }
 .sign_up_forms {
   background: #fafafa;
 }
 
-.field {
+.new_user .field {
   display: flex;
   padding: 20px;
 }
@@ -172,4 +179,8 @@ input#user_password.sign_up_fields {
   background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
 
-
+.sgin_path {
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+}

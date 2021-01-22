@@ -9,6 +9,13 @@ class FoodstuffsController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @foodstuff = Foodstuff.new
+    @foodstuffs = @recipe.foodstuffs
+    @recipephoto = Recipephoto.new
+    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
+  end
 
   def destroy
     @foodstuff = Foodstuff.find(params[:id])

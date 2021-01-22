@@ -8,21 +8,25 @@
           <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
           <% end%>
-          <p class="user_edit_button">
+          <div class="user_edit_button">
+          <div class="user_btns">
           <button class="btn btn-secondary btn-lg edit" >
             <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
           </button>
+          </div>
+          <div class="user_btns">
           <button class="btn btn-secondary btn-lg edit" >
             <%= link_to "非公開レシピ一覧",  nonreleases_user_path(current_user), class: 'btn_user_edit' %>
           </button>
-          </p>
+          </div>
+          </div>
         </div>
         <div class="user_form">
 
               <div class="align-middle">名前</div>
               <div class="align-middles"><%=  @user.name %></div>
               <div class="align-middle">自己紹介</div>
-              <div class="align-middles"><%= @user.profile %></div>
+              <div class="align-middles-profile"><%= @user.profile %></div>
               <div class="align-middle">部署</div>
               <div class="align-middles"><%= @user.department  %></div>
               <div class="align-middle">メールアドレス</div>
