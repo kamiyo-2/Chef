@@ -3,24 +3,19 @@
   <div class="title_recipe">ログイン</div>
     <div class="sign_up_forms">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render "admins/shared/error_messages", resource: resource %>
         <div class="field">
           <div class="filde_name">メールアドレス</div>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "sign_up_fields", placeholder: "半角英数字" %>
         </div>
         <div class="field">
           <div class="filde_names">パスワード</div>
-          <%= f.password_field :password, autocomplete: "new-password", class: "sign_up_fields", placeholder: "半角英数字 (6文字〜)" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "sign_up_fields", placeholder: "半角英数字 (6文字〜)" %>
         </div>
         <div class="actions_up">
           <%= f.submit "ログイン" %>
         </div>
       <% end %>
     </div>
-    <div class="sgin_path">まだ新規登録していない方は、
-      <%= link_to "こちら", new_user_registration_path, style:"color:#F96167;" %>より新規登録を行ってください
-    </div>
   </div>
 </div>
-
-
