@@ -1,0 +1,5 @@
+<%= form_with(model: @user, url: admins_user_path(@user)) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.submit %>
+<% end %>

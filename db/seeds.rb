@@ -17,3 +17,9 @@ Tag.create([
   { name: '中華メイン'},
   { name: '中華レストラン'}
   ])
+
+  Admin.create!(
+    email: 'admin@admin',
+    password: 'testtest',
+    name: '管理者'
+ )
