@@ -54,11 +54,9 @@
             <div class="show_links">
           <div class="title_recipes">材料</div>
             <div class="show_link">
-              <% if user_signed_in? && current_user.id == @recipe.user_id %>
-                <%=link_to edit_recipe_foodstuff_path(@recipe.id), method: :get do %>
+                <%=link_to edit_admins_recipe_foodstuff_path(@recipe.id), method: :get do %>
                   <button class="button_show_link" >編集</button>
                 <%end%>
-              <% end %>
             </div>
               </div>
 
@@ -83,11 +81,9 @@
           <div class="show_links">
           <div class="title_recipes">レシピ画像・テキスト</div>
             <div class="show_link">
-              <% if user_signed_in? && current_user.id == @recipe.user_id %>
-                <%=link_to edit_recipe_recipephoto_path(@recipe.id), method: :get do %>
+                <%=link_to edit_admins_recipe_recipephoto_path(@recipe.id), method: :get do %>
                   <button class="button_show_link" >編集</button>
                 <%end%>
-              <% end %>
             </div>
               </div>
 
