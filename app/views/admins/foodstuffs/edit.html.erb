@@ -52,11 +52,9 @@
           </div>
           <%= render "recipes/foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
           <div class="show_link">
-            <% if user_signed_in? && current_user.id == @recipe.user_id %>
-              <%= link_to recipe_path(@recipe.id), method: :get do %>
-                <button class="button_show_link" >戻る</button>
-              <%end%>
-            <% end %>
+            <%= link_to admins_recipe_path(@recipe.id), method: :get do %>
+              <button class="button_show_link" >戻る</button>
+            <%end%>
           </div>
         </div>
       </div>

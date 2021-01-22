@@ -68,11 +68,9 @@
         </div>
         <%= render "recipes/recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
         <div class="show_link">
-          <% if user_signed_in? && current_user.id == @recipe.user_id %>
-            <%= link_to recipe_path(@recipe.id), method: :get do %>
+            <%= link_to admins_recipe_path(@recipe.id), method: :get do %>
               <button class="button_show_link" >戻る</button>
             <%end%>
-          <% end %>
         </div>
       </div>
     </div>

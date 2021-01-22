@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :tags
-    resources :recipes
+    resources :recipes do
+      resources :foodstuffs
+      resources :recipephotos
+    end
     resources :users
   end
 
