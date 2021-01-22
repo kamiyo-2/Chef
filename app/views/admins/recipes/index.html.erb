@@ -1,0 +1,25 @@
+<div class="main_form">
+  <div class="tag-inner">
+    <div class="tag-contents">
+      <table class="tabl">
+        <tr class="tables">
+          <th class="table_title">レシピ名</th>
+          <th class="table_title">作成者</th>
+          <th class="table_title">ステータス</th>
+        </tr>
+        <% @recipes.each do |recipe| %>
+          <tr>
+            <td class="align">
+              <%= link_to admins_recipe_path(recipe) do %><%= recipe.title %><% end %>
+            </td>
+            <td class="align">
+              <%= link_to admins_user_path(recipe.user) do %><%= recipe.user.name %>
+            <% end %>
+          </td>
+          <td class="align"><%= recipe.status %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
