@@ -1,6 +1,0 @@
-<h2>ユーザー詳細画面</h2>
-<p><%= "id: #{@user.id} name: #{@user.id} email: #{@user.id}"%><%= link_to "Back", admins_users_path %> <%= link_to "Edit", edit_admins_user_path(@user) %></p>
-
-<% @user.recipes.each do |recipe| %>
-  <p><%= "title: #{recipe.title}" %></p>
-<% end %>
