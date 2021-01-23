@@ -1,0 +1,11 @@
+<div class="form_wrapper">
+  <div class="form_inner">
+    <div class="title_recipe">タグ 新規投稿</div>
+    <%= form_for @tag, url: admins_tags_path do |f| %>
+    <%= f.label :ジャンル名 %><br>
+    <%= f.text_field :name %><br>
+    <%= f.file_field :tag_image %><br>
+    <%= f.submit '保存' ,class:"btn btn-warning submit-btn" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="main_form">
+  <div class="tag-inner">
+    <div class="tag-contents">
+      <% @tags.each do |tag| %>
+        <div class="tag-content-show">
+          <div class="show_tag_link">
+            <%=link_to edit_admins_tag_path(tag) do %>
+              <button class="button_show_link" >編集</button>
+            <%end%>
+            <%=link_to admins_tag_path(tag) ,method: :delete , data: {confirm: "本当に削除してもよろしいですか？"} do %>
+              <button class="button_show_link" >削除</button>
+            <%end%>
+          </div>
+          <div class='tag-images'>
+            <%= image_tag(tag.tag_image) %>
+          </div>
+          <p class="tags_link">
+            <%= tag.name%>
+          </p>
+        </div> 
+      <% end %>
+    </div>
+  </div>
+</div> 
+ 
+
