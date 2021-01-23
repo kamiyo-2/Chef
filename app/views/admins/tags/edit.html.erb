@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="tag-inner-show">
+    <%= form_for(@tag, url: admins_tag_path) do |f| %>
+      <div class='tag-images'>
+        <%= image_tag(@tag.tag_image) %>
+      </div>
+      <div class="field">
+        <%= f.file_field :tag_image %> 
+      </div>
+      <div class="field">
+        <%= f.text_area :name, class: :form_name %>
+      </div>
+      <div class="actions">
+        <%= f.submit "保存する", class: :form_btn  %>
+      </div>
+    <% end %>
+  </div>
+</div>
