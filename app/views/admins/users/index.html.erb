@@ -1,4 +1,24 @@
-<h2>ユーザー一覧</h2>
-<% @users.each do |user| %>
-  <p><%= "id: #{user.id} name: #{user.name} email: #{user.email} " %><%= link_to "Edit", edit_admins_user_path(user) %> <%= link_to "Show", admins_user_path(user) %></p>
-<% end %>
+<div class="main_form">
+  <div class="tag-inner">
+    <div class="tag-contents">
+      <table class="tabl">
+        <tr class="tables">
+          <th class="table_title">ユーザー名</th>
+          <th class="table_title">自己紹介</th>
+          <th class="table_title">所属部署</th>
+        </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td class="align">
+              <%= link_to edit_admins_user_path(user) do %><%= user.name %><% end %>
+            </td>
+            <td class="align">
+             <%= user.profile %>
+          </td>
+          <td class="align"><%= user.department %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
