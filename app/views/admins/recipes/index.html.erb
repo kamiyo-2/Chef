@@ -16,7 +16,11 @@
               <%= link_to admins_user_path(recipe.user) do %><%= recipe.user.name %>
             <% end %>
           </td>
-          <td class="align"><%= recipe.status %></td>
+          <% if recipe.status == "nonrelease" %>
+          <td class="align">非公開</td>
+          <% else %>
+          <td class="align">公開</td>
+          <%end%>
           </tr>
         <% end %>
       </table>

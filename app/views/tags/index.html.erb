@@ -1,79 +1,24 @@
 <div class="main_form">
   <div class="tag-inner">
-    <div class="tag-contents">
-      <div class="title_recipe">タグ一覧</div>
+     <div class="title_recipe">タグ一覧</div>
       <div class="search">
         <%= form_tag(search_recipes_path,:method => 'get') do %>
           <%= text_field_tag :search, '', placeholder: "キーワード" %>
           <%= submit_tag '検索', :name => nil %>
         <% end %>
       </div>
-      <div class="tag-content">
-        <div class='tag-image'>
-          <%= link_to image_tag("french.1.jpg", class:"image_switch"), "/tags/1" %>
-          <p class="tag_link">
-            <a href="/tags/1">洋食前菜</a>
-          </p>
-        </div>
-        <div class='tag-image'>
-          <%= link_to image_tag("french.2.jpg", class:"image_switch"), "/tags/2" %>
-          <p class="tag_link">
-            <a href="/tags/2">洋食メイン</a>
-          </p>
-        </div>
-      <div class='tag-image'>
-        <%= link_to image_tag("french.3.jpg", class:"image_switch"), "/tags/3" %>
-        <p class="tag_link">
-          <a href="/tags/3">洋食レストラン</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="tag-content">
-      <div class='tag-image'>
-        <%= link_to image_tag("japan.1.jpg", class:"image_switch"), "/tags/4" %>
-        <p class="tag_link">
-          <a href="/tags/4">和食前菜</a>
-        </p>
-      </div>
-
-      <div class='tag-image'>
-        <%= link_to image_tag("japan.2.jpg", class:"image_switch"), "/tags/5" %>
-        <p class="tag_link">
-          <a href="/tags/5">和食メイン</a>
-        </p>
-      </div>
-
-      <div class='tag-image'>
-        <%= link_to image_tag("japan.3.jpg", class:"image_switch"), "/tags/6" %>
-        <p class="tag_link">
-          <a href="/tags/6">和食割烹</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="tag-content">
-      <div class='tag-image'>
-        <%= link_to image_tag("chinese.1.jpg", class:"image_switch"), "/tags/7" %>
-        <p class="tag_link">
-          <a href="/tags/7">中華前菜</a>
-        </p>
-      </div>
-
-      <div class='tag-image'>
-        <%= link_to image_tag("chinese.2.jpg", class:"image_switch"), "/tags/8" %>
-        <p class="tag_link">
-          <a href="/tags/8">中華メイン</a>
-        </p>
-      </div>
-
-      <div class='tag-image'>
-        <%= link_to image_tag("chinese.3.jpg", class:"image_switch"), "/tags/9" %>
-        <p class="tag_link">
-          <a href="/tags/9">中華レストラン</a>
-        </p>
-      </div>
+    <div class="tag-contents">
+       <% @tags.each do |tag| %>
+          <div class="tag-content-show">
+            <div class='tag-images'>
+               <%= link_to image_tag(tag.tag_image), tag_path(tag.id), method: :get %>
+            </div>
+            <p class="tags_link">
+               <%= link_to tag.name, tag_path(tag.id), method: :get %>
+            </p>
+          </div> 
+      <% end %>
     </div>
   </div>
-</div>
-
+</div> 
+ 
