@@ -1,5 +1,4 @@
-console.log("reading preview.js ...");
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+if (document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
     const createImageHTML = (blob) => {
