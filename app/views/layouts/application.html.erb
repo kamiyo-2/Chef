@@ -25,7 +25,7 @@
               <li><%= link_to "タグ 一覧",  root_path, class:"header_button" %></li>
               <li><%= link_to "レシピ 一覧",  recipes_path, class:"header_button" %></li>
               <li><%= link_to "レシピ 投稿",  new_recipe_path, class:"header_button" %></li>
-              <%# <li><%= link_to current_user.name, user_path(current_user) , class:"header_button" %></li> %>
+              <li><%= link_to current_user.name, user_path(current_user) , class:"header_button" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header_button"  %></li>
             <% elsif admin_signed_in? %>
               <li>管理者</li>

@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
 
   has_one_attached :main_image
 
-  enum status:{非公開: 0, 公開: 1}
+  enum status:{nonrelease: 0, release: 1}
 
   validates :title, :details, :process, :main_image, presence: true
 
