@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("./recipe")
 require('./user.preview')
+require('./recipe.preview')
 require('jquery')
 
 

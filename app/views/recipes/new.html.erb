@@ -4,6 +4,7 @@
     <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
       <div class="main_contents">
         <div class="image-content">
+        <div class="image_preview", id="image-list"></div>
           <% if @recipe.main_image.attached? %>
             <%= image_tag @recipe.main_image, class: "user_image_index" %>
           <% else %>
