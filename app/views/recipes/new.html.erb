@@ -5,6 +5,7 @@
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="main_contents">
         <div class="image-content">
+        <div class="image_preview", id="image-list"></div>
           <% if @recipe.main_image.attached? %>
             <%= image_tag @recipe.main_image, class: "user_image_index" %>
           <% else %>
