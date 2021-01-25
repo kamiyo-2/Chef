@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        profile: プロフィール
+        department: 所属部署
+        user_image: 画像
+      recipe:
+        title: 料理名
+        details: 何人前
+        process: 紹介文
+        main_image: 画像
+        tag_ids: タグ
+        user:
+      foodstuff: 
+        material: 材料
+        quantity: 分量
+      recipephoto:
+        text: 作り方
+        sub_image: 画像
+      tag:
+        name: タイトル
+        tag_image: 画像
+    
