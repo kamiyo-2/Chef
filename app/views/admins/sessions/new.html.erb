@@ -1,6 +1,10 @@
 <div class="main_form">
   <div class="sign_up_form">
   <div class="title_recipe">ログイン</div>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
     <div class="sign_up_forms">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "admins/shared/error_messages", resource: resource %>

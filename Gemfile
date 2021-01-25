@@ -66,3 +66,5 @@ gem 'jquery-rails'
 gem 'pry-rails'
 
 gem 'cocoon'
+
+gem 'rails-i18n'

@@ -7,9 +7,9 @@ class Recipe < ApplicationRecord
 
   has_one_attached :main_image
 
-  enum status:{nonrelease: 0, release: 1}
+  enum status:{nonreleased: 0, released: 1}
 
-  validates :title, :details, :process, :main_image, presence: true
+  validates :title, :details, :process, :main_image, :tag_ids, presence: true
 
   def self.search(search)
     return Recipe.all unless search

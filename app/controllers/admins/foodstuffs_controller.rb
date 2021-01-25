@@ -6,6 +6,8 @@ class Admins::FoodstuffsController < ApplicationController
     @foodstuff = Foodstuff.new(foodstuff_params)
     if @foodstuff.save
       render :create
+    else
+      render :errors
     end
   end
 

@@ -5,6 +5,8 @@ class RecipephotosController < ApplicationController
     @recipephoto = Recipephoto.new(recipephoto_params)
     if @recipephoto.save
       render :create
+    else
+      render :errors 
     end
   end
 

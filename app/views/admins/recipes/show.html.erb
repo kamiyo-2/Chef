@@ -91,7 +91,7 @@
           <% @recipephotos.each do |recipephoto| %>
             <div class="recipe-content-show">
               <div class='recipephoto-images'>
-                <% if @recipephoto.sub_image.attached? %>
+                <% if recipephoto.sub_image.attached? %>
                   <div class='recipephoto-images'>
                     <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
                   </div>

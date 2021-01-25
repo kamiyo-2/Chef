@@ -1,4 +1,4 @@
-if (document.URL.match( /edit/ )) {
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
     const createImageHTML = (blob) => {
@@ -8,7 +8,7 @@ if (document.URL.match( /edit/ )) {
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
     };
-    document.getElementById('user_user_image').addEventListener('change', function(e){
+    document.getElementById('recipe_main_image').addEventListener('change', function(e){
       const imageContent = document.querySelector('img');
       if (imageContent){
         imageContent.remove();
