@@ -3,6 +3,7 @@
     <div class="title-content">
       <div class="title_recipe">レシピ編集</div>
       <%= form_with(model: @recipe, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <div class="main_contents">
           <div class="image-contents">
            <div class="image_preview", id="image-list"></div>

@@ -1,4 +1,5 @@
 <%= form_for [@recipe, @foodstuff], remote: true do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %>
   <div class="foodstuff_form">
     <div class="foodstuff_forms">
       <%= f.text_area :material, placeholder: "     追加する材料" , class: "foodstuff_text" %>
