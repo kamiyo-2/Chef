@@ -1,4 +1,4 @@
 $("#recipephotos_area").html("<%= j(render 'create', { recipephotos:  @recipephoto.recipe.recipephotos }) %>")
 $("textarea").val('')
 $("input#recipephoto_sub_image").val('')
-
+$('.js-message-errors').empty();

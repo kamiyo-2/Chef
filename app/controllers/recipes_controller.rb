@@ -11,11 +11,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.valid?
-    if @recipe.save
+    if @recipe.valid?
+      @recipe.save
       redirect_to recipe_detail_recipe_path(@recipe.id)
     else
-      redirect_to new_recipe_path(@recipe.id)
+      render new_recipe_path(@recipe.id)
     end
   end
 

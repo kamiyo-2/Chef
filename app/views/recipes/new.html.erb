@@ -1,7 +1,8 @@
 <div class="form_wrapper">
   <div class="form_inner">
-<div class="title_new">  <h2>新規レシピ投稿</h2></div>
-    <%= form_with(model: @recipe, url: recipes_path, local: true) do |f| %>
+    <div class="title_new">  <h2>新規レシピ投稿</h2></div>
+    <%= form_with(model: @recipe,local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="main_contents">
         <div class="image-content">
           <% if @recipe.main_image.attached? %>
@@ -43,5 +44,3 @@
     <% end %>
   </div>
 </div>
-
-
