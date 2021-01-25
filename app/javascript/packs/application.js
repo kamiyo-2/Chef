@@ -10,6 +10,8 @@ require("channels")
 require("./recipe")
 require('./user.preview')
 require('./recipe.preview')
+require('./recipephoto.preview')
+require('./tag.preview')
 require('jquery')
 
 
