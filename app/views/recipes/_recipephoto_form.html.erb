@@ -1,5 +1,6 @@
 <div class="recipe-contents">
 <%= form_for [@recipe, @recipephoto], remote: true do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %>
     <div class="recipe-content-show">
       <div class='recipephoto-img'>
      <%= image_tag ("photo.jpg") , class: "user_image_index" %> 
