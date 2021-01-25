@@ -25,12 +25,12 @@ RSpec.describe User, type: :model do
       it "departmentが空だと登録できない" do
         @user.department = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include("プロフィールを入力してください")
+        expect(@user.errors.full_messages).to include("所属部署を入力してください")
       end
       it "emailが空では登録できない" do
         @user.email = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください", "Eメールは不正な値です")
+        expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
       it "重複したemailが存在する場合登録できない" do
         @user.save
