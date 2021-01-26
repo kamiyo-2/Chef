@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :department])
   end
 
+  def after_sign_in_path_for(resource)
+    tags_path 
+  end
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = "Guest"
@@ -26,10 +30,3 @@ class ApplicationController < ActionController::Base
   end
 
 end
-
-
-
-
-
-
- 
