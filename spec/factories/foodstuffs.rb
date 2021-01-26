@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :foodstuff do
-    material                  {Faker::String.random(length: 4)}
-    quantity                  {Faker::String.random(length: 4)}
+    material                  {"りんご"}
+    quantity                  {"5個"}
     association :recipe
   end
 end

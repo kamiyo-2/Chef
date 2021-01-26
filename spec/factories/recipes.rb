@@ -3,7 +3,7 @@ FactoryBot.define do
     title {Faker::Lorem.sentence}
     details {Faker::Lorem.sentence}
     process {Faker::Lorem.sentence}
-    status { 'released' }
+    status { 'nonreleased' }
     association :user 
 
     after(:build) do |recipe|
