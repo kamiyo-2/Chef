@@ -253,3 +253,18 @@ input.form_btn {
   margin: 10px;
 }
 
+
+
+.recipe_delete_btn {
+  background-color: red;
+  border: 1px solid red;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  margin: 10px;
+}
+
+.btn_edit_form {
+  display: flex;
+}
