@@ -66,10 +66,10 @@
               <% @foodstuffs.each do |foodstuff| %>
                 <% unless foodstuff.id.nil? %>
                   <div class="foodstuff_form">
-                    <div class="foodstuffs_text">
+                    <div class="foodstuffs_material">
                       <p><%= foodstuff.material %></p> 
                     </div>
-                    <div class="foodstuffs_texts">
+                    <div class="foodstuffs_quantity">
                       <%= foodstuff.quantity %>
                     </div>
                   </div>
@@ -95,7 +95,7 @@
           <% @recipephotos.each do |recipephoto| %>
             <div class="recipe-content-show">
               <div class='recipephoto-images'>
-                <% if @recipephoto.sub_image.attached? %>
+                <% if recipephoto.sub_image.attached? %>
                   <div class='recipephoto-images'>
                     <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
                   </div>
