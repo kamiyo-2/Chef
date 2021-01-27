@@ -63,6 +63,12 @@
 .tags_link {
   height: 30px;
   padding: 5px;
+  text-decoration: none;
+}
+
+.tags_link a{
+  text-decoration: none;
+  color: black;
 }
 
 .tag-images img {
@@ -81,23 +87,16 @@
   flex-wrap: wrap;
   border-radius: 17px;
   padding: 8px 0 0px 1vw;
-}
-
-.tag-content-show:hover {
-  margin: 15px; 
-  border: 1px solid #F96167;
-  margin: 15px;
-  width: 28%;
-  flex-wrap: wrap;
-  border-radius: 17px;
-  padding: 8px 0 0px 1vw;
   border: 0.3rem solid #b0deec;
-
 }
+
+
 
 .tag_link a:hover {
+  color: red;
+}
 
-
+.tags_link a:hover {
   color: red;
 }
 

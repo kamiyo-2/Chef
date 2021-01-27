@@ -33,8 +33,13 @@
                 </li>
               <% end %>
             </div>
+           <div class="btn_edit_form">
             <div class="actions_edit">
               <%= f.submit "戻る", class: :form_btn  %>
+            </div>
+             <div class="actions_edit">
+              <%= button_to '削除', recipe_path(@recipe.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'recipe_delete_btn'%>
+            </div>
             </div>
       <% end %>
           <div class="title_recipe">材料</div>

@@ -28,8 +28,10 @@ class Admins::RecipesController < ApplicationController
       render :edit
     end
   end
-  
-  private
+
+  def search
+    @recipes = Recipe.search(params[:search])
+  end
   
   private
   def recipe_params

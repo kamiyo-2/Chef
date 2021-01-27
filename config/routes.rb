@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :foodstuffs
       resources :recipephotos
+      collection do
+        get 'search'
+      end
     end
     resources :users
   end
@@ -30,11 +33,6 @@ Rails.application.routes.draw do
     get 'users/password/new' => 'users/passwords#new', as: 'new_user_password'
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
-
-  # devise_for :users, controllers: {
-  #   registrations: 'users/registrations',
-  #   passwords: 'users/passwords'
-  # }
 
   resources :users do
     member do

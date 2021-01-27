@@ -23,3 +23,8 @@ ja:
         name: タイトル
         tag_image: 画像
     
+
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d"
