@@ -18,13 +18,13 @@ padding: 70px 100px;
   margin: 15px 2.5%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #F96167;
+  border: 1px solid #474747;
   padding: 12px;
   border-radius: 10px;
   background-color: #fffefc;
   margin: 15px;
   float: left;
-  box-shadow: 3px 3px 3px 3px #faebd7;
+
 }
 
 .image-contents {
@@ -48,6 +48,7 @@ padding: 70px 100px;
 .image-content img  {
   height: 300px;
   width: 100%;
+  object-fit: contain;
 
 }
 .image-contents img  {

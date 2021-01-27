@@ -17,6 +17,9 @@
             <p class="tags_link">
               <%= link_to recipe.title, recipe_path(recipe.id), method: :get %>
             </p>
+            <p class="tags_link">
+              <%= link_to recipe.user.name, user_path(recipe.user.id), method: :get %>
+            </p>
           </div> 
         <% end %>
       <% end %>
