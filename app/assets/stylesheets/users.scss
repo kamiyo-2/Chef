@@ -128,6 +128,16 @@ button.btn_delete:hover {
   resize: none;
 }
 
+.user_texts {
+  padding: 10px 10px 0 12px;
+  border-radius: 30px;
+  border: 2px solid #dee2e6;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  resize: none;
+}
+
 // users.new
 
 .sign_up_form {
@@ -183,4 +193,36 @@ input#user_password.sign_up_fields {
   text-align: center;
   width: 100%;
   padding-top: 10px;
+}
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  
+  // users.show
+  .user_edit_button {
+    display: flex;
+  }
+
+  .user_image img {
+    height: 200px;
+    width: 200px;
+    margin: 0 0 0 120px;
+  }
+
+  .user_btns {
+    padding: 10px 0 10px 47px;
+  }
+
+  .user_btns {
+    padding: 10px 0 10px 47px;
+  }
+
+  .user_form {
+    width: 75%;
+  } 
+
+  
+
+
 }

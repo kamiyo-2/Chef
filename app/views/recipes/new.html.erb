@@ -1,47 +1,47 @@
 <div class="form_wrapper">
-  <div class="form_inner">
-    <div class="title_new">  <h2>新規レシピ投稿</h2></div>
-    <%= form_with(model: @recipe,local: true) do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
-      <div class="main_contents">
-        <div class="image-content">
-        <div class="image_preview", id="image-list"></div>
-          <% if @recipe.main_image.attached? %>
-            <%= image_tag @recipe.main_image, class: "user_image_index" %>
-          <% else %>
-            <%= image_tag ("photo.jpg") , class: "user_image_index" %> 
-          <% end%>
-          <%= f.file_field :main_image %> 
+  <div class="title_new">  <h2>新規レシピ投稿</h2></div>
+  <div class="title-content">
+  <%= form_with(model: @recipe,local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="main_contents">
+      <div class="image-content">
+      <div class="image_preview", id="image-list"></div>
+        <% if @recipe.main_image.attached? %>
+          <%= image_tag @recipe.main_image, class: "user_image_index" %>
+        <% else %>
+          <%= image_tag ("photo.jpg") , class: "user_image_index" %> 
+        <% end%>
+        <%= f.file_field :main_image %> 
+      </div>
+      <div class="text-content">
+         <div class="field">
+          <%= f.label :title, "料理名" %><br />
+          <%= f.text_field :title , class: :new_form_text %>
         </div>
-        <div class="text-content">
-           <div class="field">
-            <%= f.label :title, "料理名" %><br />
-            <%= f.text_field :title , class: :new_form_text %>
-          </div>
-          <div class="field">
-            <%= f.label :process, "紹介文" %><br />
-            <%= f.text_area :process, class: :new_form_text %>
-          </div>
-          <div class="field">
-            <%= f.label :details, "何人前" %><br />
-            <%= f.text_area :details, class: :new_form_text %>
-          </div>
-           <span>タグ</span>
-          <div class="check_box">
-            <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-              <li class="tag-list">
-                <%= tag.label do %>
-                  <%= tag.check_box %>
-                  <%= tag.text %>
-                <% end %>
-              </li>
-            <% end %>
-          </div>
-          <div class="actions">
-            <%= f.submit "保存する", class: :form__btn  %>
-          </div>
+        <div class="field">
+          <%= f.label :process, "紹介文" %><br />
+          <%= f.text_area :process, class: :new_form_text %>
+        </div>
+        <div class="field">
+          <%= f.label :details, "何人前" %><br />
+          <%= f.text_area :details, class: :new_form_text %>
+        </div>
+         <span>タグ</span>
+        <div class="check_box">
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+            <li class="tag-list">
+              <%= tag.label do %>
+                <%= tag.check_box %>
+                <%= tag.text %>
+              <% end %>
+            </li>
+          <% end %>
+        </div>
+        <div class="actions">
+          <%= f.submit "保存する", class: :form__btn  %>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>

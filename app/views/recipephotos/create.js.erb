@@ -1,4 +1,5 @@
 $("#recipephotos_area").html("<%= j(render 'create', { recipephotos:  @recipephoto.recipe.recipephotos }) %>")
 $("textarea").val('')
-$("img.user_image_index").val(nil)
 $('.js-message-errors').empty();
+$("img.user_image_index").attr("src","/assets/photo-2fd77d42018590c6d8251de9a009195319fe21f97865fa2fc90a0ee870cca973.jpg");
+$("input#recipephoto_sub_image").val('')

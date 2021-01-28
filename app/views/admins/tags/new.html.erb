@@ -1,9 +1,9 @@
 <div class="form_wrapper">
-  <div class="form_inner">
+ <div class="title-content">
     <div class="title_recipe">タグ 新規投稿</div>
     <%= form_for @tag, url: admins_tags_path do |f| %>
-          <div class="recipe-content-show">
-      <div class='recipephoto-img'>
+          <div class="tag-content-new">
+      <div class='tag_new_img'>
         <div class="image_preview", id="image-list"></div>
         <% if @tag.tag_image.attached? %>
           <%= image_tag @tag.tag_image, class: "user_image_index" %>
@@ -13,7 +13,7 @@
           <%= f.file_field :tag_image %> 
       </div>
       <p class="recipephoto_texts">
-        <%= f.text_area :name, placeholder: "追加する材料" , class: "recipephoto_text" %>
+        <%= f.text_area :name, placeholder: "タグ名" , class: "recipephoto_text" %>
       </p>
        <div class="actions">
       <%= f.submit "追加" %>
