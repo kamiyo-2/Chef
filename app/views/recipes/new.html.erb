@@ -1,11 +1,11 @@
 <div class="form_wrapper">
-  <div class="title_new">  <h2>新規レシピ投稿</h2></div>
   <div class="title-content">
-  <%= form_with(model: @recipe,local: true) do |f| %>
-    <%= render 'layouts/error_messages', model: f.object %>
-    <div class="main_contents">
-      <div class="image-content">
-      <div class="image_preview", id="image-list"></div>
+    <div class="title_recipe">新規レシピ投稿</div>
+    <%= form_with(model: @recipe,local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="main_contents">
+        <div class="image-content">
+        <div class="image_preview", id="image-list"></div>
         <% if @recipe.main_image.attached? %>
           <%= image_tag @recipe.main_image, class: "user_image_index" %>
         <% else %>
@@ -26,7 +26,7 @@
           <%= f.label :details, "何人前" %><br />
           <%= f.text_area :details, class: :new_form_text %>
         </div>
-         <span>タグ</span>
+        <span>タグ</span>
         <div class="check_box">
           <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
             <li class="tag-list">
@@ -41,7 +41,6 @@
           <%= f.submit "保存する", class: :form__btn  %>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

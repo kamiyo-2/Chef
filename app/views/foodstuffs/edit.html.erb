@@ -19,6 +19,12 @@
       <div class="main_contents">
         <div class="image-contents">
           <%= image_tag @recipe.main_image %>
+           <p class="tags_link">
+          <i class="fas fa-calendar-alt"></i>
+          <%= l @recipe.created_at %>
+              <i class="fas fa-user"></i>
+              <%= link_to @recipe.user.name, user_path(@recipe.user.id), method: :get %>
+            </p>
         </div>
         <div class="text_content">
           <div class="title_recipe">レシピ</div>

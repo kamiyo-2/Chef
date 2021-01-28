@@ -304,6 +304,77 @@ input.form_btn {
   color: red;
 }
 
+.show_links_recipes {
+  border-bottom: 3px solid #b0deec;
+  margin-right: auto;
+  margin-left: auto;
+  width: 960px;
+}
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+
+  .main_contents {
+    flex-wrap: wrap;
+  }
+
+  .image-content {
+    width: 95%;
+  }
+
+
+  // recipes.show, edit, recipe_detail
+
+  .main_contents {
+    flex-wrap: wrap;
+  }
+
+  .image-contents {
+    width: 100%;
+  }
+
+  .text_content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .foodstuffs_text {
+    width: 56%;
+  }
+
+  .foodstuffs_texts {
+    width: 25%;
+  }
+
+  .foodstuff_forms {
+    width: 94%;
+  }
+
+  textarea#foodstuff_material.foodstuff_text {
+    width: 60%;
+  }
+
+  .foodstuff_texts {
+    width: 26%;
+  }
+
+  .foodstuffs_material {
+    width: 60%;
+  }
+
+  .text-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .new_form_text {
+    width: 95%;
+  }
+
+}
+
+
+
+
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
 
@@ -322,7 +393,6 @@ input.form_btn {
   }
 
   .main_contents {
-    display: flex;
     flex-wrap: wrap;
   }
 
@@ -340,6 +410,9 @@ input.form_btn {
   }
 
   .show_links_recipe {
+    width: 400px;
+  }
+  .show_links_recipes {
     width: 400px;
   }
 
@@ -370,5 +443,8 @@ input.form_btn {
 
 .new_form_text {
   width: 93%;
+}
+.recipephoto-img img {
+  height: 150px;
 }
 }

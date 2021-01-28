@@ -196,6 +196,45 @@ input#user_password.sign_up_fields {
 }
 
 
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+ 
+
+  .user_form {
+    width: 90%;
+  }
+
+  .user_image {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .user_image img {
+    margin: 0 34vw;
+  }
+  .user_edit_button {
+    display: flex;
+  }
+
+
+  .user_edit_button {
+    display: flex;
+    width: 5vw;
+    padding: 0 31vw;
+  }
+  
+  .user_btns {
+    padding: 10px;
+  }
+
+  .user_form input.button {
+    margin: 10px 0 0 70vw;
+  }
+  
+}
+
+
+
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
   
@@ -214,15 +253,17 @@ input#user_password.sign_up_fields {
     padding: 10px 0 10px 47px;
   }
 
-  .user_btns {
-    padding: 10px 0 10px 47px;
-  }
-
   .user_form {
     width: 75%;
   } 
 
+  .user_form input.button {
+    margin: 10px 0 0 40vw;
+  }
   
+  .user_edit_button {
+    padding: 0;
+}
 
 
 }

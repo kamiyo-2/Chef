@@ -7,18 +7,22 @@
           <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
           <% end%>
+          
           <div class="user_edit_button">
-          <div class="user_btns">
-          <button class="btn btn-secondary btn-lg edit" >
-            <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
-          </button>
+           <%if user_signed_in? && current_user == @user %>
+            <div class="user_btns">
+              <button class="btn btn-secondary btn-lg edit" >
+                <%= link_to "プロフィールを編集", edit_user_path(current_user), class: 'btn_user_edit' %>
+              </button>
+            </div>
+             <%end%>
+            <div class="user_btns">
+              <button class="btn btn-secondary btn-lg edit" >
+                <%= link_to "非公開レシピ一覧",  nonreleases_user_path(current_user), class: 'btn_user_edit' %>
+            </button>
+            </div>
           </div>
-          <div class="user_btns">
-          <button class="btn btn-secondary btn-lg edit" >
-            <%= link_to "非公開レシピ一覧",  nonreleases_user_path(current_user), class: 'btn_user_edit' %>
-          </button>
-          </div>
-          </div>
+          
         </div>
         <div class="user_form">
 
