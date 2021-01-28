@@ -4,12 +4,13 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     const createImageHTML = (blob) => {
       const imageElement = document.createElement('div');
       const blobImage = document.createElement('img');
+      blobImage.setAttribute('class', 'user_image_index');
       blobImage.setAttribute('src', blob);
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);
     };
     document.getElementById('tag_tag_image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img');
+      const imageContent = document.querySelector('img.user_image_index');
       if (imageContent){
         imageContent.remove();
       }

@@ -5,9 +5,9 @@
       <%= form_with(model: @recipe, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
         <div class="main_contents">
-          <div class="image-contents">
+          <div class="image-content">
            <div class="image_preview", id="image-list"></div>
-            <%= image_tag @recipe.main_image %>
+            <%= image_tag @recipe.main_image, class: "user_image_index" %>
             <%= f.file_field :main_image %> 
              <p class="tags_link">
           <i class="fas fa-calendar-alt"></i>
@@ -66,8 +66,9 @@
           </div>
         </div>
       </div>
-      <div class="recipephoto_form">
-        <div class="title_recipe">作り方</div>
+        <div class="show_links_recipe">
+      <div class="title_recipes">作り方</div>
+      </div>
         <div class="recipe-contents">
           <% @recipephotos.each do |recipephoto| %>
             <div class="recipe-content-show">

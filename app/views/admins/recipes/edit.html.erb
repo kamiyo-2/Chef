@@ -4,9 +4,9 @@
       <div class="title_recipe">レシピ編集</div>
 	      <%= form_for(@recipe, url: admins_recipe_path) do |f| %>
         <div class="main_contents">
-          <div class="image-contents">
+          <div class="image-content">
           <div class="image_preview", id="image-list"></div>
-            <%= image_tag @recipe.main_image %>
+            <%= image_tag @recipe.main_image, class: "user_image_index" %>
             <%= f.file_field :main_image %> 
              <p class="tags_link">
           <i class="fas fa-calendar-alt"></i>
