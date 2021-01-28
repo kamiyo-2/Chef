@@ -132,3 +132,34 @@ footer {
   border: 1px solid #dee2e6;
   padding: 0.75rem;
 }
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+
+  .navbar-toggler-icon¥¥{
+    background-image: url("/images/menu.jpeg");
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+}

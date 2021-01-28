@@ -13,7 +13,8 @@
 .tag-contents{
 	width: 103%;
 	display: flex;
-	flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
 .tag-content{
@@ -81,8 +82,7 @@
 }
 
 .tag-content-show{
-  margin: 15px; 
-  margin: 15px;
+  margin: 12px; 
   width: 28%;
   flex-wrap: wrap;
   border-radius: 17px;
@@ -121,4 +121,43 @@
 
 .show_tag_link {
   display: flex;
+}
+
+.tag-content-new {
+  margin: 15px auto;
+  width: 50%;
+  height: 600px;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+  border-radius: 17px;
+  padding: 8px 0 0px 1vw;
+}
+.tag_new_img img {
+  height: 430px;
+  width: 95%;
+  border-radius: 15px;
+  vertical-align: bottom;
+  padding: 5px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  // tags.index, show
+  .tag-content-show {
+    margin: 4px;
+  }
+
+  .tag-images img {
+    height: 150px;
+  }
+
+  // tags.new
+
+  .tag-content-new {
+    width: 100%;
+  }
+
 }

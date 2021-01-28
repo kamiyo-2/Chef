@@ -1,9 +1,9 @@
-<div class="main_form">
-  <div class="main">
-    <div class="inner">
+<div class="form_wrapper">
+<div class="title-content">
+
       <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
-        <div class="user_wapper">
+         <div class="main_contents">
           <div class="user_image">
             <p class="user_image_fild">
               <div class="image_preview", id="image-list"></div>
@@ -22,7 +22,7 @@
             <div class="align-middle">部署</div>
             <%= f.text_field :department, class: "user_text" %>
             <div class="align-middle">自己紹介</div>
-            <%= f.text_area :profile, rows:"2",class: "user_text", style:"height:100px" %>
+            <%= f.text_area :profile, rows:"2",class: "user_texts", style:"height:100px" %>
             <div class="align-middle">メールアドレス</div>
             <%= f.text_field :email, class: "user_text" %>
             <div class="button_form">
@@ -34,6 +34,6 @@
           </div>
         </div>
       <% end %>
-    </div>
+
   </div>
 </div>
