@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    resources :comments
     member do
       get 'nonreleases'
     end
