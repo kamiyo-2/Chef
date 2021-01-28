@@ -18,7 +18,12 @@
       <div class="main_contents">
         <div class="image-contents">
           <%= image_tag @recipe.main_image %>
+          <p class="tags_link">
+          <i class="fas fa-calendar-alt"></i>
           <%= l @recipe.created_at %>
+              <i class="fas fa-user"></i>
+              <%= link_to @recipe.user.name, user_path(@recipe.user.id), method: :get %>
+            </p>
         </div>
         <div class="text_content">
          <div class="show_links">
@@ -78,14 +83,14 @@
     
   <div class="show_links_recipe">
     <div class="title_recipes">作り方</div>
-      <div class="show_link">
-        <% if user_signed_in? && current_user.id == @recipe.user_id %>
-          <%=link_to edit_recipe_recipephoto_path(@recipe.id), method: :get do %>
-            <button class="button_show_link" >編集</button>
-          <%end%>
-        <% end %>
-      </div>
+    <div class="show_link">
+      <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <%=link_to edit_recipe_recipephoto_path(@recipe.id), method: :get do %>
+          <button class="button_show_link" >編集</button>
+        <%end%>
+      <% end %>
     </div>
+  </div>
 
     <div class="recipe-contents">
       <% @recipephotos.each do |recipephoto| %>
