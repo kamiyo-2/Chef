@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :foodstuffs
     resources :recipephotos
+    resources :comments
     member do
       get 'recipe_detail'
       get 'nonreleases'

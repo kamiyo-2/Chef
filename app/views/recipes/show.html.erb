@@ -112,5 +112,20 @@
         </div> 
       <% end %>
     </div>
+
+      <div class="show_links_recipe">
+    <div class="title_recipes">Comment</div>
+    </div>
+    <div class="comment_content">
+             <div id="comments_area">
+          <%= render "comments/create", comments: @comments %>
+        </div>
+           <div class="show_links_recipe">
+    <div class="title_recipes">New Comment</div>
+    </div>
+        <div class="js-message-errors"></div>
+          <%= render "comment_form", recipe: @recipe,comment: @comment %>
+    </div>
   </div>
 </div>
+ 
