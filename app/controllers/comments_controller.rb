@@ -1,6 +1,19 @@
 class CommentsController < ApplicationController
+
   def create
-    Comment.create(comment_params)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      render :create
+    else
+      render :errors
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy!
+      render :create
+    end
   end
 
   private

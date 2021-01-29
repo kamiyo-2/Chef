@@ -1,0 +1,13 @@
+<%= form_for [@recipe, @comment], remote: true do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %>
+  <div class="comments_form">
+    <div class="comments_forms">
+      <%= f.text_area :text, class: "comment_text" %>
+    </div>
+    <div class="actions_comment">
+      <%= f.submit "コメント" %>
+    </div>
+ </div>
+<% end %>
+
+ 
