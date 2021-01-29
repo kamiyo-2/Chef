@@ -23,6 +23,8 @@
           <%= l @recipe.created_at %>
               <i class="fas fa-user"></i>
               <%= link_to @recipe.user.name, user_path(@recipe.user.id), method: :get %>
+               <i class="fas fa-comment"></i>
+              <%= @recipe.comments.count%>
             </p>
       </div>
       <div class="text_content">
@@ -101,4 +103,16 @@
         </div> 
       <% end %>
   </div>
+
+
+      <div class="show_links_recipe">
+    <div class="title_recipes">Comment</div>
+    </div>
+    <div class="comment_content">
+             <div id="comments_area">
+          <%= render "comments/create", comments: @comments %>
+        </div>
+    </div>
+  </div>
 </div>
+ 

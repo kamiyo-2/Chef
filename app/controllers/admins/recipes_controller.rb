@@ -9,7 +9,9 @@ class Admins::RecipesController < ApplicationController
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
+    @recipephotos = @recipe.recipephotos
+    @comment = Comment.new
+    @comments = @recipe.comments
   end
 
   def edit
@@ -17,7 +19,7 @@ class Admins::RecipesController < ApplicationController
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
+    @recipephotos = @recipe.recipephotos
   end
 
   def update

@@ -13,7 +13,7 @@
           <%= link_to comment.user.name, user_path(comment.user.id), method: :get %>
           <i class="fas fa-calendar-alt"></i>
           <%= l comment.created_at %>
-          <% if comment.user == current_user %>
+          <% if comment.user == current_user || admin_signed_in? %>
             <i class="fas fa-trash-alt"></i>
             <%= link_to '削除', recipe_comment_path(comment.recipe_id, comment.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } %>
           <% end %>
