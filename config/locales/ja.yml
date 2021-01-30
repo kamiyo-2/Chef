@@ -22,7 +22,9 @@ ja:
       tag:
         name: タイトル
         tag_image: 画像
-    
+      comment:
+        text: コメント
+
   time:
     formats:
       default: "%Y/%m/%d"
