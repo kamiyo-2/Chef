@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.includes(:user).order("created_at DESC")
   end
 
-
   def new
     @recipe = Recipe.new
   end
@@ -62,8 +61,6 @@ class RecipesController < ApplicationController
   def search
     @recipes = Recipe.search(params[:search]).order("created_at DESC")
   end
-  
-
 
   private
   def recipe_params

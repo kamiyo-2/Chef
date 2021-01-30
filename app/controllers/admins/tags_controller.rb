@@ -40,7 +40,6 @@ class Admins::TagsController < ApplicationController
   end
 
   private
-
   def tag_params
     params.require(:tag).permit(:name, :tag_image)
   end

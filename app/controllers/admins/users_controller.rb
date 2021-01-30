@@ -26,7 +26,6 @@ class Admins::UsersController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit(:name, :user_image, :profile, :department,:email)
   end
@@ -34,5 +33,4 @@ class Admins::UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
 end

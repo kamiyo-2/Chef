@@ -1,0 +1,12 @@
+<% @foodstuffs.each do |foodstuff| %>
+  <% unless foodstuff.id.nil? %>
+    <div class="foodstuff_form">
+      <div class="foodstuffs_material">
+        <p><%= foodstuff.material %></p> 
+      </div>
+      <div class="foodstuffs_quantity">
+        <%= foodstuff.quantity %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

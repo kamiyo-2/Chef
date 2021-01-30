@@ -14,22 +14,22 @@
           <% end %>
         <% end %>
       </div>
-      </div>
-      <div class="main_contents">
-        <div class="image-contents">
-          <%= image_tag @recipe.main_image %>
-          <p class="tags_link">
+    </div>
+    <div class="main_contents">
+      <div class="image-contents">
+        <%= image_tag @recipe.main_image %>
+        <p class="tags_link">
           <i class="fas fa-calendar-alt"></i>
           <%= l @recipe.created_at %>
-              <i class="fas fa-user"></i>
-              <%= link_to @recipe.user.name, user_path(@recipe.user.id), method: :get %>
-              <i class="fas fa-comment"></i>
-              <%= @recipe.comments.count%>
-            </p>
-        </div>
-        <div class="text_content">
-         <div class="show_links">
-        <div class="title_recipes"><%= @recipe.title %></div>
+          <i class="fas fa-user"></i>
+          <%= link_to @recipe.user.name, user_path(@recipe.user.id), method: :get %>
+          <i class="fas fa-comment"></i>
+          <%= @recipe.comments.count%>
+        </p>
+      </div>
+      <div class="text_content">
+        <div class="show_links">
+          <div class="title_recipes"><%= @recipe.title %></div>
           <div class="show_link">
             <% if user_signed_in? && current_user.id == @recipe.user_id %>
               <%=link_to edit_recipe_path(@recipe.id), method: :get do %>
@@ -37,52 +37,22 @@
               <%end%>
             <% end %>
           </div>
-            </div>
-           <div class="title_content">
-            <div class="title_field">
-              <p>紹介文</p>
-            </div>
-            <div class="title_fields">
-              <%= @recipe.process %>
-            </div>
-          </div>
-          <div class="title_content">
-            <div class="title_field">
-              <P>分量(何人前)</p>
-            </div>
-            <div class="title_fields">
-              <p><%= @recipe.details %></p>
-            </div>
-          </div>
-
-          <div class="show_links">
-            <div class="title_recipes">材料</div>
-            <div class="show_link">
-              <% if user_signed_in? && current_user.id == @recipe.user_id %>
-                <%=link_to edit_recipe_foodstuff_path(@recipe.id), method: :get do %>
-                  <button class="button_show_link" >編集</button>
-                <%end%>
-              <% end %>
-            </div>
-          </div>
-
-          <% @foodstuffs.each do |foodstuff| %>
-            <% unless foodstuff.id.nil? %>
-              <div class="foodstuff_form">
-                <div class="foodstuffs_material">
-                  <p><%= foodstuff.material %></p> 
-                </div>
-                <div class="foodstuffs_quantity">
-                  <%= foodstuff.quantity %>
-                </div>
-              </div>
+        </div>
+        <%= render "recipes/recipe", recipe: @recipe %>
+        <div class="show_links">
+          <div class="title_recipes">材料</div>
+          <div class="show_link">
+            <% if user_signed_in? && current_user.id == @recipe.user_id %>
+              <%=link_to edit_recipe_foodstuff_path(@recipe.id), method: :get do %>
+                <button class="button_show_link" >編集</button>
+              <%end%>
             <% end %>
-          <% end %>
+          </div>
+        </div>
+        <%= render "foodstuffs/foodstuff", foodstuff: @foodstuffs %>
       </div>
     </div>
   </div>
-
-    
   <div class="show_links_recipe">
     <div class="title_recipes">作り方</div>
     <div class="show_link">
@@ -93,40 +63,19 @@
       <% end %>
     </div>
   </div>
-
-    <div class="recipe-contents">
-      <% @recipephotos.each do |recipephoto| %>
-        <div class="recipe-content-show">
-          <div class='recipephoto-images'>
-            <% if recipephoto.sub_image.attached? %>
-              <div class='recipephoto-images'>
-                <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
-              </div>
-            <% else %>
-              <div class='recipephoto-img'>
-                <%= image_tag ("photo.jpg") , class: "none_image" %> 
-              </div>
-            <% end%>
-          </div>
-          <p class="recipephoto_texts">
-            <p><%= recipephoto.text %></p> 
-          </p>
-        </div> 
-      <% end %>
-    </div>
-
-      <div class="show_links_recipe">
+  <%= render "recipephotos/recipephoto", recipephoto: @recipephotos %>
+  <div class="show_links_recipe">
     <div class="title_recipes">Comment</div>
+  </div>
+  <div class="comment_content">
+    <div id="comments_area">
+      <%= render "comments/create", comments: @comments %>
     </div>
-    <div class="comment_content">
-             <div id="comments_area">
-          <%= render "comments/create", comments: @comments %>
-        </div>
-           <div class="show_links_recipe">
-    <div class="title_recipes">New Comment</div>
+    <div class="show_links_recipe">
+      <div class="title_recipes">New Comment</div>
     </div>
-        <div class="js-message-errors"></div>
-          <%= render "comment_form", recipe: @recipe,comment: @comment %>
+    <div class="js-message-errors"></div>
+      <%= render "comment_form", recipe: @recipe,comment: @comment %>
     </div>
   </div>
 </div>

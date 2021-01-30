@@ -26,7 +26,6 @@ class Admins::RecipesController < ApplicationController
   end
   
   private
-
   def recipe_params
     params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: [])
   end
@@ -41,6 +40,5 @@ class Admins::RecipesController < ApplicationController
     @recipephoto = Recipephoto.new
     @recipephotos = @recipe.recipephotos
   end
-
 end
 
