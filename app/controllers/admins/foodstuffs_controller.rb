@@ -1,4 +1,5 @@
 class Admins::FoodstuffsController < ApplicationController
+  before_action :authenticate_admin!
   skip_before_action :verify_authenticity_token
 
   def create
@@ -16,7 +17,7 @@ class Admins::FoodstuffsController < ApplicationController
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
+    @recipephotos = @recipe.recipephotos
   end
 
   def destroy
@@ -25,9 +26,6 @@ class Admins::FoodstuffsController < ApplicationController
       render :create
     end
   end
-
-
- 
 
   private
   def foodstuff_params

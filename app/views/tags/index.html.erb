@@ -1,23 +1,23 @@
 <div class="main_form">
   <div class="tag-inner">
-     <div class="title_recipe">タグ一覧</div>
-      <div class="search">
-        <%= form_tag(search_recipes_path,:method => 'get') do %>
-          <%= text_field_tag :search, '', placeholder: "キーワード" %>
-          <%= submit_tag '検索', :name => nil %>
-        <% end %>
-      </div>
+    <div class="title_recipe">タグ一覧</div>
+    <div class="search">
+      <%= form_tag(search_recipes_path,:method => 'get') do %>
+        <%= text_field_tag :search, '', placeholder: "キーワード" %>
+        <%= submit_tag '検索', :name => nil %>
+      <% end %>
+    </div>
     <div class="tag-contents">
-       <% @tags.each do |tag| %>
-          <div class="tag-content-show">
-            <div class='tag-images'>
-               <%= link_to image_tag(tag.tag_image), tag_path(tag.id), method: :get %>
-            </div>
-            <p class="tags_link">
+      <% @tags.each do |tag| %>
+        <div class="tag-content-show">
+          <div class='tag-images'>
+            <%= link_to image_tag(tag.tag_image), tag_path(tag.id), method: :get %>
+          </div>
+          <p class="tags_link">
             <i class="fas fa-tags"></i>
-               <%= link_to tag.name, tag_path(tag.id), method: :get %>
-            </p>
-          </div> 
+            <%= link_to tag.name, tag_path(tag.id), method: :get %>
+          </p>
+        </div> 
       <% end %>
     </div>
   </div>

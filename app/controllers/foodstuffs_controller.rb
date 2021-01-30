@@ -1,4 +1,5 @@
 class FoodstuffsController < ApplicationController
+  before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
   def create
@@ -25,10 +26,7 @@ class FoodstuffsController < ApplicationController
       render :create
     end
   end
-
-
  
-
   private
   def foodstuff_params
     params.require(:foodstuff).permit(:material, :quantity).merge(recipe_id: params[:recipe_id])

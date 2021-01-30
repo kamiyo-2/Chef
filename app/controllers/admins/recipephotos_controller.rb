@@ -1,5 +1,5 @@
 class Admins::RecipephotosController < ApplicationController
-
+  before_action :authenticate_admin!
   def create
     @recipe = Recipe.find params[:recipe_id]
     @recipephoto = Recipephoto.new(recipephoto_params)
@@ -17,7 +17,6 @@ class Admins::RecipephotosController < ApplicationController
     @recipephoto = Recipephoto.new
     @recipephotos = @recipe.recipephotos.order(created_at: :desc)
   end
-  
 
   def destroy
     @recipephoto = Recipephoto.find(params[:id]) 
@@ -26,7 +25,6 @@ class Admins::RecipephotosController < ApplicationController
     end
   end
 
-  
   private
   def recipephoto_params
     params.require(:recipephoto).permit(:text, :sub_image).merge(recipe_id: params[:recipe_id])

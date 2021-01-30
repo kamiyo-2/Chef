@@ -1,9 +1,11 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_recipe,           only: [:recipe_detail, :edit, :show, :update, :destroy, :release, :nonrelease]
+  before_action :set_recipe_children,  only: [:recipe_detail, :show, :edit]
 
   def index
     @recipe = Recipe.includes(:user).order("created_at DESC")
   end
-
 
   def new
     @recipe = Recipe.new
@@ -20,70 +22,60 @@ class RecipesController < ApplicationController
   end
 
   def recipe_detail
-    @recipe = Recipe.find(params[:id])
-    @foodstuff = Foodstuff.new
-    @foodstuffs = @recipe.foodstuffs
-    @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-    @foodstuff = Foodstuff.new
-    @foodstuffs = @recipe.foodstuffs
-    @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos
     @comment = Comment.new
     @comments = @recipe.comments
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
-    @foodstuff = Foodstuff.new
-    @foodstuffs = @recipe.foodstuffs
-    @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos
     if @recipe.user != current_user
       render :edit
     end
   end
 
   def update
-    recipe = Recipe.find(params[:id])
-    if recipe.update(recipe_params)
-      redirect_to recipe_path(recipe.id), method: :get
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe.id), method: :get
     else
       render :edit
     end
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to root_path
   end
 
   def release
-    recipe =  Recipe.find(params[:id])
-    recipe.released! unless recipe.released?
-    redirect_to recipe_path(recipe), notice: 'この作品を公開しました'
+    @recipe.released! unless @recipe.released?
+    redirect_to recipe_path(@recipe)
   end
 
   def nonrelease
-    recipe =  Recipe.find(params[:id])
-    recipe.nonreleased! unless recipe.nonreleased?
-    redirect_to recipe_path(recipe), notice: 'この作品を非公開にしました'
+    @recipe.nonreleased! unless @recipe.nonreleased?
+    redirect_to recipe_path(@recipe)
   end
 
   def search
-    @recipes = Recipe.search(params[:search])
+    @recipes = Recipe.search(params[:search]).order("created_at DESC")
   end
-  
-
 
   private
   def recipe_params
     params.require(:recipe).permit(:title, :process, :details, :main_image, tag_ids: []).merge(user_id: current_user.id)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def set_recipe_children
+    @foodstuff = Foodstuff.new
+    @foodstuffs = @recipe.foodstuffs
+    @recipephoto = Recipephoto.new
+    @recipephotos = @recipe.recipephotos
   end
  
 end

@@ -7,9 +7,7 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_one_attached :main_image
-
   enum status:{nonreleased: 0, released: 1}
-
   validates :title, :details, :process, :main_image, presence: true
 
   def self.search(search)

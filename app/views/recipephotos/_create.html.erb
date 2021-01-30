@@ -1,19 +1,19 @@
 <div class="show_links_recipe">
-    <div class="title_recipes">作り方</div>
-    </div>
+  <div class="title_recipes">作り方</div>
+</div>
 <div class="recipe-contents">
   <% recipephotos.each do |recipephoto| %>
     <div class="recipe-content-show">
       <div class='recipephoto-image'>
-      <% if recipephoto.sub_image.attached? %>
-        <div class='recipephoto-images'>
+        <% if recipephoto.sub_image.attached? %>
+          <div class='recipephoto-images'>
             <%= image_tag recipephoto.sub_image, class: "user_image_indexs" %>
-            </div>
-          <% else %>
+          </div>
+        <% else %>
           <div class='recipephoto-img'>
             <%= image_tag ("photo.jpg") , class: "none_image" %> 
-            </div>
-          <% end%>
+          </div>
+        <% end%>
       </div>
       <p class="recipephoto_texts">
         <p><%= recipephoto.text %></p> 

@@ -1,4 +1,5 @@
 class RecipephotosController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @recipe = Recipe.find params[:recipe_id]
@@ -15,9 +16,8 @@ class RecipephotosController < ApplicationController
     @foodstuff = Foodstuff.new
     @foodstuffs = @recipe.foodstuffs
     @recipephoto = Recipephoto.new
-    @recipephotos = @recipe.recipephotos.order(created_at: :desc)
+    @recipephotos = @recipe.recipephotos
   end
-  
 
   def destroy
     @recipephoto = Recipephoto.find(params[:id]) 
@@ -25,7 +25,6 @@ class RecipephotosController < ApplicationController
       render :create
     end
   end
-
   
   private
   def recipephoto_params

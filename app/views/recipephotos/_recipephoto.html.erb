@@ -1,8 +1,7 @@
-<div class="title_recipe">レシピ画像・テキスト</div>
 <div class="recipe-contents">
-  <% recipephotos.each do |recipephoto| %>
+  <% @recipephotos.each do |recipephoto| %>
     <div class="recipe-content-show">
-      <div class='recipephoto-image'>
+      <div class='recipephoto-images'>
         <% if recipephoto.sub_image.attached? %>
           <div class='recipephoto-images'>
             <%= image_tag recipephoto.sub_image, class: "user_image_index" %>
@@ -16,11 +15,6 @@
       <p class="recipephoto_texts">
         <p><%= recipephoto.text %></p> 
       </p>
-      <%= button_to '削除', recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'recipephoto_btn'%>
     </div> 
   <% end %>
 </div>
-
-
-
- 

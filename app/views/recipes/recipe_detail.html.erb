@@ -2,49 +2,33 @@
   <div class="form_inner">
     <div class="">
       <div class="title-content">
-      <div class="title_new"><h2>新規レシピ投稿</h2></div>
+        <div class="title_recipes">新規レシピ投稿</div>
+        <%= link_to release_recipe_path(@recipe), method: :patch do %>
+          <button class="button_release" >公開にする</button>
+        <%end%>
         <div class="main_contents">
           <div class="image-contents">
             <%= image_tag @recipe.main_image %>
           </div>
           <div class="text_content">
-             <div class="title_recipe"><p><%= @recipe.title %></p></div>
-            <div class="title_content">
-              <div class="title_field">
-                <p>紹介文</p>
-              </div>
-              <div class="title_fields">
-                <%= @recipe.process %>
-              </div>
+            <div class="title_recipe"><p><%= @recipe.title %></p></div>
+            <%= render "recipes/recipe", recipe: @recipe %>
+            <div class="title_recipe">材料</div>
+            <div id="foodstuffs_area">
+              <%= render "foodstuffs/create", foodstuffs: @foodstuffs %>
             </div>
-            <div class="title_content">
-              <div class="title_field">
-                <P>分量(何人前)</p>
-              </div>
-              <div class="title_fields">
-                <p><%= @recipe.details %></p>
-              </div>
-            </div>
-             <div class="title_recipe">材料</div>
-             <div id="foodstuffs_area">
-          <%= render "foodstuffs/create", foodstuffs: @foodstuffs %>
-        </div>
-        <div class="js-message-errors"></div>
-          <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
+            <div class="js-message-errors"></div>
+            <%= render "foodstuff_form", recipe: @recipe,foodstuff: @foodstuff %>
           </div>
         </div>
-    
       </div>
       <div class="recipephoto_form">
-
         <div id="recipephotos_area">
           <%= render "recipephotos/create", recipephotos: @recipephotos %>
         </div>
-         <div class="js-message-errors"></div>
-          <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
-
+        <div class="js-message-errors"></div>
+        <%= render "recipephoto_form", recipe: @recipe,recipephoto: @recipephoto %>
       </div>
-        <a><%= link_to '公開する', release_recipe_path(@recipe), method: :patch %></a>
     </div>
   </div>
 </div>
