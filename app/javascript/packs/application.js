@@ -12,6 +12,7 @@ require('./user.preview')
 require('./recipe.preview')
 require('./recipephoto.preview')
 require('./tag.preview')
+require('./test')
 require('jquery')
 
 
