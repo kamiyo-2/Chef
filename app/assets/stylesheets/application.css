@@ -15,8 +15,8 @@
  */
 
 .main_form {
-  padding: 40px 0 0 0;
   height :100％;
+  padding: 40px 0 0 0;
 }
 
 .header_form {
@@ -25,7 +25,7 @@
 }
 
 .icon {
-padding: 0 100px;
+  padding: 0 100px;
 }
 
 .icon img {
@@ -35,12 +35,11 @@ padding: 0 100px;
 
 header {
   border-bottom: 0.3rem solid rgba(43,43,43,.88);
-
 }
 
 .nav_botton {
-  width: 100vw;
   padding: 25px 0;
+  width: 100vw;
 }
 
 .nav_botton ul {
@@ -55,61 +54,61 @@ header {
 }
 
 .nav_botton ul li a {
-  text-decoration: none;
   color: black;
- 
+  text-decoration: none;
+
 }
 
 .nav_botton ul li a:hover {
-color: red;
+  color: red;
 }
 
 header.scroll-nav {
-  padding: 10px 50px;
   background: white;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 10px 50px;
 }
 
 footer {
   border-top: 0.3rem solid rgba(43,43,43,.88);
-  width: 100vw;
   padding: 20px 0;
+  width: 100vw;
   }
 
-  .container {
+.container {
   padding: 20px 39%;
+}
 
-  }
+.background {
+  background-image: url("main.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
 
-  .background {
-    background-image: url("main.jpeg");
-    background-size: cover;
-    height: 100vh;
-  }
+.chef {
+  font-size: 130px;
+  padding: 250px 0 0 0;
+}
 
-  .chef {
-    font-size: 130px;
-    padding: 250px 0 0 0;
-  }
-  .user_button_form {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
+.user_button_form {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
 
-  .btn-border {
-  display: inline-block;
-  max-width: 180px;
-  text-align: left;
-  border: 2px solid black;
-  font-size: 16px;
-  color: black;
+.btn-border {
   background-color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
+  border: 2px solid black;
   border-radius: 4px;
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
   transition: .4s;
+  max-width: 180px;
+  padding: 8px 16px;
 }
 
 .btn-border:hover {
@@ -121,6 +120,7 @@ footer {
 .tabl {
   width: 100%;
 }
+
 .tables {
   background-color: rgba(0,0,0,0.075);
   border: 1px solid #dee2e6;
@@ -129,8 +129,8 @@ footer {
 
 .table_title {
   border: 1px solid #dee2e6;
-  padding: 0.75rem;
   font-size: 20px;
+  padding: 0.75rem;
 }
 
 .align {
@@ -139,22 +139,12 @@ footer {
 }
 
 
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
- 
-}
-
-
-
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
-
-
   .navbar-toggler-icon¥¥{
     background-image: url("/images/menu.jpeg");
     border-radius: 5px;
     height: 10px;
     width: 10px;
   }
-  
 }

@@ -5,6 +5,6 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @recipes = @tag.recipes
+    @recipes = @tag.recipes.order("created_at DESC")
   end
 end

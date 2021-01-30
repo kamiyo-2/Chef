@@ -12,54 +12,48 @@
 }
 
 .foodstuf_field {
+  border: 2px solid red;
   width: 44%;
-  border: 2px solid red;  
 }
-
-.foodstuff_btn {
-
-}
-
-
 
 .foodstuff_text {
   height: 25px;
-  width: 40%;
   margin: 10px 3vw;
   resize: none;
+  width: 40%;
 }
 
 .foodstuff_texts {
   height: 25px;
-  width: 20%;
   margin: 10px 3vw;
   resize: none;
+  width: 20%;
 }
 
 .foodstuffs_text {
   height: 25px;
-  width: 36%;
   margin: 10px 3vw;
   border: 1px solid silver;
+  width: 36%;
 }
 
 .foodstuffs_material {
   height: 25px;
-  width: 36%;
   margin: 10px 3vw;
+  width: 36%;
 }
 
 .foodstuffs_texts {
-  height: 25px;
-  width: 17%;
-  margin: 10px 3vw;
   border: 1px solid silver;
+  height: 25px;
+  margin: 10px 3vw;
+  width: 17%;
 }
 
 .foodstuffs_quantity{
   height: 25px;
-  width: 17%;
   margin: 10px 3vw;
+  width: 17%;
 }
 
 .actions_foodstuff {
