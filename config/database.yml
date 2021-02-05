@@ -50,8 +50,6 @@ test:
 production:
   <<: *default
   database: Chef_production
-  username: <%= ENV['CHEF_DATABASE_PASSWORD'] %>
-  password: <%= ENV['CHEF_DATABASE_PASSWORD'] %>
-  username: <%= ENV['CHEF_DATABASE_PASSWORD'] %>
-
-  
+  username: root
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
