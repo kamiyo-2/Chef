@@ -18,6 +18,7 @@
       <p class="recipephoto_texts">
         <p><%= recipephoto.text %></p> 
       </p>
+        <%= button_to '編集', recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :post, remote: true, class: 'recipephoto_btn'%>
       <%= button_to '削除', recipe_recipephoto_path(recipephoto.recipe_id, recipephoto.id), method: :delete, remote: true, data: { confirm: '削除してよろしいですか？' } , class: 'recipephoto_btn'%>
     </div> 
   <% end %>
