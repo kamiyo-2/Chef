@@ -11,7 +11,7 @@
       <% @tags.each do |tag| %>
         <div class="tag-content-show">
           <div class='tag-images'>
-            <%# <%= link_to image_tag(tag.tag_image), tag_path(tag.id), method: :get %> %>
+            <%= link_to image_tag(tag.tag_image), tag_path(tag.id), method: :get %>
           </div>
           <p class="tags_link">
             <i class="fas fa-tags"></i>

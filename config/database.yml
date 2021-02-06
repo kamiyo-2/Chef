@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: Chef_production
+  database: chef_production
   username: root
   password: <%= Rails.application.credentials.db[:password] %>
   host: <%= Rails.application.credentials.db[:hostname] %>
