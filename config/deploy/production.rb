@@ -1,4 +1,4 @@
-server "ElatsticIP", user: "kamiyo", roles: %w{app db web}
+server "18.178.23.196", user: "kamiyo", roles: %w{app db web}
 
 set :ssh_options, {
   keys: %w(~/.ssh/chef.pem),
@@ -16,7 +16,7 @@ set :ssh_options, {
 
 
 
-# role-based syntax
+set :deploy_to, "/var/www/chef"
 # ==================
 
 # Defines a role with one or multiple servers. The primary server in each

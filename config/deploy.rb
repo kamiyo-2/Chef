@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.15.0"
 
-set :application, "chef"
+set :application, "Chef"
 set :repo_url, "git@github.com:kamiyo-2/Chef.git"
 set :rbenv_ruby, File.read('.ruby-version').strip
 
